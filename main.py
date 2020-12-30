@@ -19,14 +19,18 @@ while True:
         break
 
 # Gather Carry Capacities
-INVENTORY = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
-while True:
-    try:
-        caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
-        INVENTORY["slots"], INVENTORY["material"], INVENTORY["mining"], INVENTORY["fish"], INVENTORY["food"], INVENTORY["choppin"], INVENTORY["bug"] = [int(i) for i in caps.split(" ")]
-        break
-    except:
-        print("Please enter a valid capacity input")
+try:
+    from inventory import INVENTORY
+except ImportError:
+    INVENTORY = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
+    while True:
+        try:
+            caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
+            (INVENTORY["slots"], INVENTORY["material"], INVENTORY["mining"], INVENTORY["fish"], INVENTORY["food"],
+             INVENTORY["choppin"], INVENTORY["bug"]) = [int(i) for i in caps.split(" ")]
+            break
+        except ValueError:
+            print("Please enter a valid capacity input")
 # Loop Through Combinations
 FOUND = False
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
