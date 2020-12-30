@@ -4,7 +4,7 @@ from itertools import combinations
 from math import comb
 
 # Script Imports
-from methods import canCarry, canCraft, gatherNRecipes, gatherMaterials
+from methods import can_carry, can_craft, gather_n_recipes, gather_materials
 
 # Asset Imports
 from recipes import RECIPES
@@ -13,13 +13,13 @@ from recipes import RECIPES
 TO_CRAFT = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 while True:
     TASK_TIER = int(input("What tier of the task are you on (1-10):\n"))
-    if(TASK_TIER not in [1,2,3,4,5,6,7,8,9,10]):
+    if not (1 <= TASK_TIER <= 10):
         print("Please enter a valid tier")
     else:
         break
 
 # Gather Carry Capacities
-INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1 }
+INVENTORY = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
 while True:
     try:
         caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
@@ -36,42 +36,41 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
     if(TESTED % 1000 == 0):
         print(f"Tested: { TESTED } / { POSSIBLE }", end="\r")
     # Gather recipe list, material list, and simulate carrying
-    allRecipes = gatherNRecipes(toCraft=combo, recipes=RECIPES)
-    materials = gatherMaterials(toCraft=combo, recipes=RECIPES)
-    carry = canCarry(materials=materials, inventory=INVENTORY)
+    all_recipes = gather_n_recipes(to_craft=combo, recipes=RECIPES)
+    materials = gather_materials(to_craft=combo, recipes=RECIPES)
+    carry = can_carry(materials=materials, inventory=INVENTORY)
     # Make copy of materials
-    materialsCopy = deepcopy(materials)
-    if(carry):
+    materials_copy = deepcopy(materials)
+    if carry:
         # Simulate crafting
-        craft = canCraft(toCraft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY)
-        if(craft):
+        craft = can_craft(to_craft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY)
+        if craft:
             FOUND = True
             # Print Recipes to Craft
             nl = "\n"
-            pToCraft = {}
-            for r in allRecipes:
-                try:
-                    pToCraft[r] += 1
-                except KeyError:
-                    pToCraft[r] = 1
-            max_width = len(str(max(pToCraft.values())))
-            printRecipes = [f"{v:{max_width}} {m}" for m, v in pToCraft.items()]
-            print(f"\nRecipes:\n  { f'{nl}  '.join(printRecipes) }")
+            p_to_craft = {}
+            for r in all_recipes:
+                if r not in p_to_craft:
+                    p_to_craft[r] = 0
+                p_to_craft[r] += 1
+            max_width = len(str(max(p_to_craft.values())))
+            printRecipes = [f"{v:{max_width}} {m}" for m, v in p_to_craft.items()]
+            print(f"\nRecipes:\n  {f'{nl}  '.join(printRecipes)}")
             # Print Materials Needed
-            max_val = max(materialsCopy.values(),key=lambda x: x["quantity"])
+            max_val = max(materials_copy.values(), key=lambda x: x["quantity"])
             max_width = len(str(max_val["quantity"]))
-            pMaterials = [f"{v['quantity']:{max_width}} {m}" for m, v in materialsCopy.items()]
-            print(f"\nMaterials:\n  { f'{nl}  '.join(pMaterials) }")
-            print(f"Can carry: { carry }")
-            print(f"Can Craft: { craft }")
-            if(FOUND):
+            pMaterials = [f"{v['quantity']:{max_width}} {m}" for m, v in materials_copy.items()]
+            print(f"\nMaterials:\n  {f'{nl}  '.join(pMaterials)}")
+            print(f"Can carry: {carry}")
+            print(f"Can Craft: {craft}")
+            if FOUND:
                 # Ask for another combo
-                if(input(f"Find another recipe (y/n):\n") == "y"):
+                if input(f"Find another recipe (y/n):\n") in ["", "y"]:
                     continue
                 else:
                     break
             else:
-              continue
+                continue
     TESTED += 1
-if(not FOUND):
+if not FOUND:
     print(f"No recipe combinations found. Raise your carry capacity/slots and try again.")
