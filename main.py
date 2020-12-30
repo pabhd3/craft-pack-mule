@@ -20,14 +20,14 @@ while True:
 
 # Gather Carry Capacities
 try:
-    from inventory import INVENTORY
+    from caps import INVENTORY_CAPS
 except ImportError:
-    INVENTORY = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
+    INVENTORY_CAPS = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
     while True:
         try:
             caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
-            (INVENTORY["slots"], INVENTORY["material"], INVENTORY["mining"], INVENTORY["fish"], INVENTORY["food"],
-             INVENTORY["choppin"], INVENTORY["bug"]) = [int(i) for i in caps.split(" ")]
+            (INVENTORY_CAPS["slots"], INVENTORY_CAPS["material"], INVENTORY_CAPS["mining"], INVENTORY_CAPS["fish"], INVENTORY_CAPS["food"],
+             INVENTORY_CAPS["choppin"], INVENTORY_CAPS["bug"]) = [int(i) for i in caps.split(" ")]
             break
         except ValueError:
             print("Please enter a valid capacity input")
@@ -40,12 +40,12 @@ for combo in pbar(combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER])):
     # Gather recipe list, material list, and simulate carrying
     all_recipes = gather_n_recipes(to_craft=combo, recipes=RECIPES)
     materials = gather_materials(to_craft=combo, recipes=RECIPES)
-    carry = can_carry(materials=materials, inventory=INVENTORY)
+    carry = can_carry(materials=materials, inventory=INVENTORY_CAPS)
     # Make copy of materials
     materials_copy = deepcopy(materials)
     if carry:
         # Simulate crafting
-        craft = can_craft(to_craft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY)
+        craft = can_craft(to_craft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY_CAPS)
         if craft:
             FOUND = True
             # Print Recipes to Craft
