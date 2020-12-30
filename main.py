@@ -1,7 +1,7 @@
 # Pip Imports
 from copy import deepcopy
 from itertools import combinations
-from progressbar import ProgressBar, Counter, Timer
+from tqdm import tqdm
 
 # Script Imports
 from methods import can_carry, can_craft, gather_n_recipes, gather_materials
@@ -34,9 +34,7 @@ except ImportError:
 # Loop Through Combinations
 FOUND = False
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
-widgets = ["Combinations tested: ", Counter(), " ", Timer()]
-pbar = ProgressBar(widgets=widgets)
-for combo in pbar(combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER])):
+for combo in tqdm(combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]), desc="Combinations tested", unit=""):
     # Gather recipe list, material list, and simulate carrying
     all_recipes = gather_n_recipes(to_craft=combo, recipes=RECIPES)
     materials = gather_materials(to_craft=combo, recipes=RECIPES)
