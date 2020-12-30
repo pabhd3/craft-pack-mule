@@ -25,9 +25,12 @@ except ImportError:
     INVENTORY_CAPS = {"weapon": 1, "armor": 1, "tool": 1, "bag": 1}
     while True:
         try:
-            caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
-            (INVENTORY_CAPS["slots"], INVENTORY_CAPS["material"], INVENTORY_CAPS["mining"], INVENTORY_CAPS["fish"], INVENTORY_CAPS["food"],
-             INVENTORY_CAPS["choppin"], INVENTORY_CAPS["bug"]) = [int(i) for i in caps.split(" ")]
+            caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n").split(" ")
+            if len(caps) != 7:
+                print("Please enter a valid capacity input")
+                continue
+            names = ["slots", "material", "mining", "fish", "food", "choppin", "bug"]
+            INVENTORY_CAPS.update(dict(zip(names, map(int, caps))))
             break
         except ValueError:
             print("Please enter a valid capacity input")
