@@ -1,7 +1,7 @@
 # Pip Imports
 from copy import deepcopy
 from itertools import combinations
-from math import comb
+from progressbar import ProgressBar, Counter, Timer
 
 # Script Imports
 from methods import can_carry, can_craft, gather_n_recipes, gather_materials
@@ -30,11 +30,9 @@ while True:
 # Loop Through Combinations
 FOUND = False
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
-TESTED = 0
-POSSIBLE = comb(len(CRAFTABLE), TO_CRAFT[TASK_TIER])
-for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
-    if(TESTED % 1000 == 0):
-        print(f"Tested: { TESTED } / { POSSIBLE }", end="\r")
+widgets = ["Combinations tested: ", Counter(), " ", Timer()]
+pbar = ProgressBar(widgets=widgets)
+for combo in pbar(combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER])):
     # Gather recipe list, material list, and simulate carrying
     all_recipes = gather_n_recipes(to_craft=combo, recipes=RECIPES)
     materials = gather_materials(to_craft=combo, recipes=RECIPES)
@@ -71,6 +69,5 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
                     break
             else:
                 continue
-    TESTED += 1
 if not FOUND:
     print(f"No recipe combinations found. Raise your carry capacity/slots and try again.")
