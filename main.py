@@ -15,7 +15,7 @@ TO_CRAFT = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 TASK_TIER = getTaskTier()
 
 # Gather Carry Capacities
-INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1 }
+INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000 }
 getCaps(inventory=INVENTORY)
 
 # Loop Through Combinations

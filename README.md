@@ -5,26 +5,21 @@ This tool is used to determine various recipe combinations used to complete the 
 ```
 Up to date with Version 1.06
 Task Tier Supported: 10
-Last Updated: Dec 29, 2020 10:52:00 CST
+Last Updated: Dec 31, 2020 12:19:00 CST
 ```
 
 ## Special Thanks
 
-AlienC4#5271
-Big Coight#4453
-Deerjump#3003
+AlienC4#5271 ( Optimization )
 
-For helping parse recipe data.
+Big Coight#4453, Deerjump#3003 ( Recipe data parsing)
 
 ## Default Locked Recipes
 
 The following recipes are currently considered locked, either due to actually being uncraftable or my working on how to handle its recipe correctly.
 
 ```
-Party Hat, Anvil Tab 2, Golden Peanut, Blunderhills NPC Completion Token, Blunder Skills Completion Token,
-Blunderhills Misc Completion Token, Easy Blunderhills NPC Token, Med Blunderhills NPC Token,
-Hard Blunderhills NPC Token, Amarok Helmet, Amarok Bodyplate, Amarok Hinds, Amarok Paws, Gold Pickaxe,
-Golden Axe, Anvil Tab 3, Empty Box
+Party Hat, Anvil Tab 2, Golden Peanut, Blunderhills NPC Completion Token, Blunder Skills Completion Token, Blunderhills Misc Completion Token, Easy Blunderhills NPC Token, Med Blunderhills NPC Token, Hard Blunderhills NPC Token, Anvil Tab 3, Empty Box
 ```
 
 ## How to use
@@ -50,13 +45,13 @@ Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs):
 
 `No Recipes Showing`
 
-This probably means you don't have the carry capacity to craft any combination of recipes. The following inputs can handle Tier 10 of the task:
+This probably means you don't have the carry capacity to craft any combination of recipes. The following inputs can handle Tier 10 of the task ( but does take a moment to calculate):
 
 ```
 What tier of the task are you on (1-10):
-3
+10
 Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs):
-1000 10000 10000 10000 10000 10000 10000
+100000 100000 100000 100000 100000 100000 100000
 ```
 
 `File: recipes.py`
