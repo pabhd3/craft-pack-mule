@@ -58,8 +58,8 @@ def canCraft(toCraft, materials, recipes, inv):
     # Setup Inventory
     inventory = [ None ] * inv["slots"]
     for material, info in materials.items():
-        # Until material is empty
         while True:
+            # Find first empty slot
             idx = inventory.index(None)
             matType = info["type"]
             matQuantity = info["quantity"]
@@ -68,6 +68,7 @@ def canCraft(toCraft, materials, recipes, inv):
                 "quantity": inv[matType] if matQuantity > inv[matType] else matQuantity
             }
             inventory[idx] = slot
+            # Update material quantity remaining
             info["quantity"] -= slot["quantity"]
             if(info["quantity"] == 0):
                 break
@@ -82,7 +83,8 @@ def canCraft(toCraft, materials, recipes, inv):
                 while rscRemoved < rscNeeded:
                     rscStillNeeded = rscNeeded - rscRemoved
                     # Find resource index
-                    rscIndex = [None if i is None else i["material"] for i in inventory].index(rscName)
+                    rscIndex = [None if i is None else i["material"]
+                                for i in inventory].index(rscName)
                     if(inventory[rscIndex]["quantity"] > rscStillNeeded):
                         # Remove whats needed
                         rscRemoved += rscStillNeeded
@@ -91,6 +93,33 @@ def canCraft(toCraft, materials, recipes, inv):
                         # Remove all from inventory index
                         rscRemoved += inventory[rscIndex]["quantity"]
                         inventory[rscIndex] = None
+            # Cleanup Inventory
+            matList = [None if m is None else m["material"] for m in inventory]
+            for material in set([m["material"] for m in inventory 
+                                 if m is not None and m["material"] not in toCraft]):
+                # Parse material type and inventory indexes
+                matType = materials[material]["type"]
+                matIdxs = [i for i, d in enumerate(matList) if d == material]
+                # Check for 2+ slots used can be reduced
+                if(len(matIdxs) > 1):
+                    matQuantities = [inventory[i]["quantity"] for i in matIdxs]
+                    if(ceil(sum(matQuantities)/inv[matType]) < len(matIdxs)):
+                        # Set current slots to empty
+                        for i in matIdxs:
+                            inventory[i] = None
+                        matToPlace = sum(matQuantities)
+                        while True:
+                            # Find an empty slot
+                            idx = inventory.index(None)
+                            slot = {
+                                "material": material,
+                                "quantity": inv[matType] if matToPlace > inv[matType] else matToPlace
+                            }
+                            inventory[idx] = slot
+                            # Update materials quantity remaining
+                            matToPlace -= slot["quantity"]
+                            if(matToPlace == 0):
+                                break
         return True
-    except Exception:
+    except Exception as err:
         return False

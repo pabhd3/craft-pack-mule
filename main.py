@@ -5,28 +5,19 @@ from math import comb
 
 # Script Imports
 from methods import canCarry, canCraft, gatherNRecipes, gatherMaterials
+from user import getCaps, getTaskTier, printCombo
 
 # Asset Imports
 from recipes import RECIPES
 
 # Number of Items to Craft
 TO_CRAFT = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
-while True:
-    TASK_TIER = int(input("What tier of the task are you on (1-10):\n"))
-    if(TASK_TIER not in [1,2,3,4,5,6,7,8,9,10]):
-        print("Please enter a valid tier")
-    else:
-        break
+TASK_TIER = getTaskTier()
 
 # Gather Carry Capacities
 INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1 }
-while True:
-    try:
-        caps = input("Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs:\n")
-        INVENTORY["slots"], INVENTORY["material"], INVENTORY["mining"], INVENTORY["fish"], INVENTORY["food"], INVENTORY["choppin"], INVENTORY["bug"] = [int(i) for i in caps.split(" ")]
-        break
-    except:
-        print("Please enter a valid capacity input")
+getCaps(inventory=INVENTORY)
+
 # Loop Through Combinations
 FOUND = False
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
@@ -35,6 +26,12 @@ POSSIBLE = comb(len(CRAFTABLE), TO_CRAFT[TASK_TIER])
 for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
     if(TESTED % 1000 == 0):
         print(f"Tested: { TESTED } / { POSSIBLE }", end="\r")
+    if(TESTED == 10000):
+        print(f"\n\nLooks like your carry capacity isn't enough for Tier { TASK_TIER }.")
+        if(input("Would you like to keep searching for combos (y/n)?:\n") == "y"):
+            pass
+        else:
+            break
     # Gather recipe list, material list, and simulate carrying
     allRecipes = gatherNRecipes(toCraft=combo, recipes=RECIPES)
     materials = gatherMaterials(toCraft=combo, recipes=RECIPES)
@@ -46,24 +43,7 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
         craft = canCraft(toCraft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY)
         if(craft):
             FOUND = True
-            # Print Recipes to Craft
-            nl = "\n"
-            pToCraft = {}
-            for r in allRecipes:
-                try:
-                    pToCraft[r] += 1
-                except KeyError:
-                    pToCraft[r] = 1
-            max_width = len(str(max(pToCraft.values())))
-            printRecipes = [f"{v:{max_width}} {m}" for m, v in pToCraft.items()]
-            print(f"\nRecipes:\n  { f'{nl}  '.join(printRecipes) }")
-            # Print Materials Needed
-            max_val = max(materialsCopy.values(),key=lambda x: x["quantity"])
-            max_width = len(str(max_val["quantity"]))
-            pMaterials = [f"{v['quantity']:{max_width}} {m}" for m, v in materialsCopy.items()]
-            print(f"\nMaterials:\n  { f'{nl}  '.join(pMaterials) }")
-            print(f"Can carry: { carry }")
-            print(f"Can Craft: { craft }")
+            printCombo(recipes=allRecipes, materials=materialsCopy)
             if(FOUND):
                 # Ask for another combo
                 if(input(f"Find another recipe (y/n):\n") == "y"):
