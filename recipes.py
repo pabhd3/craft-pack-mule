@@ -1,3 +1,11 @@
+"""
+Formatting
+
+recipe Name: (item type, is craftable, resources)
+
+resources -> [(resource name, quantity needed, resource type, has recipe), ...]
+"""
+
 RECIPES = {
     'Boxing Gloves': ('weapon', True, [('Crimson String', 1, 'material', False), ('Cue Tape', 5, 'material', False)]),
     'Wooden Spear': ('weapon', True, [('Spore Cap', 25, 'material', False), ('Copper Bar', 10, 'mining', False)]),
@@ -127,4 +135,5 @@ RECIPES = {
     'Bandito Boots': ('armor', True, [('Gold Boots', 1, 'armor', True), ('Distilled Water', 9, 'material', False), ('Fly', 2000, 'bug', False), ('Butterfly', 1250, 'bug', False)]),
     'Slurpin Herm': ('food', True, [('Hermit Can', 5, 'fish', False), ('Average Strength Potion', 2, 'food', False)]),
     'Buttered Toasted Butter': ('food', True, [('Butterfly', 5, 'bug', False), ('Kebab Sticks', 1, 'food', False)]),
-    'Sandy Satchel': ('bag', True, [('Golden Plop', 1, 'material', False), ('Snakeskinventory Bag', 1, 'bag', False), ('Pocket Sand', 777, 'material', False)])}
+    'Sandy Satchel': ('bag', True, [('Golden Plop', 1, 'material', False), ('Snakeskinventory Bag', 1, 'bag', False), ('Pocket Sand', 777, 'material', False)])
+}

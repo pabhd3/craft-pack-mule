@@ -5,7 +5,7 @@ from math import comb
 
 # Script Imports
 from methods import canCarry, canCraft, gatherNRecipes, gatherMaterials
-from user import getCaps, getTaskTier, printCombo
+from user import getCaps, getTaskTier, printCombo, printRecommended
 
 # Asset Imports
 from recipes import RECIPES
@@ -27,7 +27,7 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
     if(TESTED % 1000 == 0):
         print(f"Tested: { TESTED } / { POSSIBLE }", end="\r")
     if(TESTED == 10000):
-        print(f"\n\nLooks like your carry capacity isn't enough for Tier { TASK_TIER }.")
+        printRecommended(tier=TASK_TIER)
         if(input("Would you like to keep searching for combos (y/n)?:\n") == "y"):
             pass
         else:
