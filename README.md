@@ -5,7 +5,8 @@ This tool is used to determine various recipe combinations used to complete the 
 ```
 Up to date with Version 1.06
 Task Tier Supported: 10
-Last Updated: Dec 31, 2020 12:19:00 CST
+Recommendations Tier Supported: 5
+Last Updated: Jan 03, 2020 10:03:00 CST
 ```
 
 ## Special Thanks
@@ -54,7 +55,15 @@ Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs):
 100000 100000 100000 100000 100000 100000 100000
 ```
 
+## Recommendations (Beta)
+If after 10,000 combinations of recipes a working combo isn't found, you'll be provided with a list of recommendations to complete this current tier.
+
+Please note that this feature is a *WORK IN PROGRESS*, and that it can be improved upon. Not every task tier is currently supported, but improvements are being made.
+
+## Unlocking Recipes
+
 `File: recipes.py`
+
 By default, the script will assume you can use all recipes. To set a recipe to be uncraftable, update the line to reflect the change with the following format:
 
 _Recipe Unlocked Wooden Spear ( line 2 )_
