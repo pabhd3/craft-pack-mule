@@ -17,6 +17,25 @@ def gatherNRecipes(toCraft, recipes):
     return nestedRecipes + allRecipes
 
 
+def sortRecipes(toCraft, recipes):
+    """
+        Sort list of recipes based on quantity of resources needed to craft
+        Inputs: toCraft=list(str), recipes=dict
+        Returns: list(str)
+    """
+    counted = []
+    for tc in toCraft:
+        # Determine nested recipes + resources to craft them
+        nested = gatherNRecipes(toCraft=[tc], recipes=recipes)
+        needed = sum([sum([rsc[1] for rsc in recipes[nr][2]]) for nr in nested])
+        counted.append((nested, needed))
+    # Sort recipes by resources needed
+    sortedRecipes = []
+    for r in sorted(counted, key=lambda x: x[1], reverse=True):
+        sortedRecipes += r[0]
+    return sortedRecipes
+
+
 def gatherMaterials(toCraft, recipes):
     """
         Determine list of materials/quantities to craft 1 of each recipe
@@ -29,10 +48,11 @@ def gatherMaterials(toCraft, recipes):
         rType, rCraftable, rResources = recipes[recipe]
         for rscName, rscQuantity, rscType, RscRecipe in rResources:
             # Add material quantity
-            try:
-                materials[rscName]["quantity"] += rscQuantity
-            except KeyError:
-                materials[rscName] = { "type": rscType, "quantity": rscQuantity }
+            if(not RscRecipe):
+                try:
+                    materials[rscName]["quantity"] += rscQuantity
+                except KeyError:
+                    materials[rscName] = { "type": rscType, "quantity": rscQuantity }
     return materials
 
 

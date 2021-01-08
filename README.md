@@ -5,8 +5,8 @@ This tool is used to determine various recipe combinations used to complete the 
 ```
 Up to date with Version 1.06
 Task Tier Supported: 10
-Recommendations Tier Supported: 5
-Last Updated: Jan 03, 2020 10:03:00 CST
+Recommendations Tier Supported: 6
+Last Updated: Jan 07, 2020 18:10:00 CST
 ```
 
 ## Special Thanks
@@ -40,22 +40,13 @@ What tier of the task are you on (1-10):
 After hitting run, you will be prompted in the console to add in your inventory slots and carry capacities. See pictures ( s1.PNG and s2.PNG ) for values to use, and see example below on how to input capacities:
 
 ```
-Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs):
+Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs)
+Ex. 45 491 150 75 375 451 75:
 39 491 150 75 375 431 75
 ```
 
-`No Recipes Showing`
-
-This probably means you don't have the carry capacity to craft any combination of recipes. The following inputs can handle Tier 10 of the task ( but does take a moment to calculate):
-
-```
-What tier of the task are you on (1-10):
-10
-Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs):
-100000 100000 100000 100000 100000 100000 100000
-```
-
 ## Recommendations (Beta)
+
 If after 10,000 combinations of recipes a working combo isn't found, you'll be provided with a list of recommendations to complete this current tier.
 
 Please note that this feature is a *WORK IN PROGRESS*, and that it can be improved upon. Not every task tier is currently supported, but improvements are being made.

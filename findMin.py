@@ -5,8 +5,9 @@ from math import comb, floor
 from time import sleep
 
 # Script Imports
-from methods import canCarry, canCraft, gatherNRecipes, gatherMaterials
+from methods import canCarry, canCraft, gatherMaterials, sortRecipes
 from scoreRecipes import scoreRecipes
+from user import printCombo
 
 # Asset Imports
 from recipes import RECIPES
@@ -16,13 +17,13 @@ BASE_CAPS = [ 10, 50, 100, 250, 500, 1000 ]
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
 MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5]
 SLEEP_TIME = 0.01
-SLOTS = range(16,64)
-TO_CRAFT = 45
+SLOTS = range(16,65)
+TO_CRAFT = 24
 
 
 # Determine Caps Needed
-CRAFTABLE = scoreRecipes(toScore=CRAFTABLE)[:TO_CRAFT]
-ALL_RECIPES = gatherNRecipes(toCraft=CRAFTABLE, recipes=RECIPES)
+CRAFTABLE = scoreRecipes(toCraft=CRAFTABLE)[:TO_CRAFT]
+ALL_RECIPES = sortRecipes(toCraft=CRAFTABLE, recipes=RECIPES)
 MATERIALS = gatherMaterials(toCraft=ALL_RECIPES, recipes=RECIPES)
 CAPS_NEEDED = {
     "material": False, "mining": False, "fish": False,
@@ -47,11 +48,12 @@ MINVENTORY = {
 }
 
 # Print whatever
-print(f"Recipes\n{ CRAFTABLE }\n")
-matList = []
-for m, info in MATERIALS.items():
-    matList.append(f"{ info['quantity'] } { m }")
-print(f"Materials\n{ matList }\n")
+# print(f"Recipes\n{ ALL_RECIPES }\n")
+# matList = []
+# for m, info in MATERIALS.items():
+#     matList.append(f"{ info['quantity'] } { m }")
+# print(f"Materials\n{ matList }\n")
+printCombo(recipes=ALL_RECIPES, materials=MATERIALS)
 FOUND = []
 for s in SLOTS:
     # Set number of slots

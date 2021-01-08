@@ -4,7 +4,8 @@ from itertools import combinations
 from math import comb
 
 # Script Imports
-from methods import canCarry, canCraft, gatherNRecipes, gatherMaterials
+from methods import canCarry, canCraft, gatherMaterials, sortRecipes
+from scoreRecipes import scoreRecipes
 from user import getCaps, getTaskTier, printCombo, printRecommended
 
 # Asset Imports
@@ -20,7 +21,7 @@ getCaps(inventory=INVENTORY)
 
 # Loop Through Combinations
 FOUND = False
-CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
+CRAFTABLE = scoreRecipes(toCraft=[k for k, v in RECIPES.items() if v[1]])
 TESTED = 0
 POSSIBLE = comb(len(CRAFTABLE), TO_CRAFT[TASK_TIER])
 for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
@@ -33,14 +34,14 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
         else:
             break
     # Gather recipe list, material list, and simulate carrying
-    allRecipes = gatherNRecipes(toCraft=combo, recipes=RECIPES)
-    materials = gatherMaterials(toCraft=combo, recipes=RECIPES)
+    allRecipes = sortRecipes(toCraft=combo, recipes=RECIPES)
+    materials = gatherMaterials(toCraft=allRecipes, recipes=RECIPES)
     carry = canCarry(materials=materials, inventory=INVENTORY)
     # Make copy of materials
     materialsCopy = deepcopy(materials)
     if(carry):
         # Simulate crafting
-        craft = canCraft(toCraft=combo, materials=materials, recipes=RECIPES, inv=INVENTORY)
+        craft = canCraft(toCraft=allRecipes, materials=materials, recipes=RECIPES, inv=INVENTORY)
         if(craft):
             FOUND = True
             printCombo(recipes=allRecipes, materials=materialsCopy)

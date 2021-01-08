@@ -106,7 +106,7 @@ RECIPES = {
     'Platinum Platbody': ('armor', True, [('Potato Remains', 5000, 'material', False), ('Iron Platebody', 5, 'armor', True), ('Platinum Bar', 1000, 'mining', False)]), 
     'Platinum Shins': ('armor', True, [('Sentient Cereal', 500, 'bug', False), ('Iron Platelegs', 6, 'armor', True), ('Platinum Bar', 1250, 'mining', False)]), 
     'Platinum Boots': ('armor', True, [('Tropilogs', 7500, 'choppin', False), ('Jellyfish', 10000, 'fish', False)]),
-    'Bullet': ('food', True, [('Forest Fibers', 10, 'choppin', False), ('Fly', 10, 'bug', False)]),
+    'Bullet': ('food', True, [('Forest Fibres', 10, 'choppin', False), ('Fly', 10, 'bug', False)]),
     'Enforced Slasher': ('weapon', True, [('Nuget Cake', 10, 'material', False), ('Leather Hide', 12000, 'material', False), ('Royal Bayonet', 3, 'weapon', True)]),
     'Pharoah Bow': ('weapon', True, [('Woodular Circle', 10, 'material', False), ('Bloach', 10000, 'fish', False), ('Spiked Menace', 3, 'weapon', True)]),
     'Crows Nest': ('weapon', True, [('Golden Plop', 10, 'material', False), ('Fruitfly', 10000, 'bug', False), ('Starlight', 3, 'weapon', True)]),
@@ -137,3 +137,41 @@ RECIPES = {
     'Buttered Toasted Butter': ('food', True, [('Butterfly', 5, 'bug', False), ('Kebab Sticks', 1, 'food', False)]),
     'Sandy Satchel': ('bag', True, [('Golden Plop', 1, 'material', False), ('Snakeskinventory Bag', 1, 'bag', False), ('Pocket Sand', 777, 'material', False)])
 }
+
+
+MATERIALS = {
+    "World 1": {
+        "Anvil": ['Thread', 'Trusty Nails', 'Boring Brick', 'Chain Link', 'Leather Hide'],
+        "Boss": ['Amarok Slab', 'Chaotic Amarok Slab'],
+        "Chopping": ['Oak Logs', 'Grass Leaf', 'Bleach Logs', 'Jungle Logs', 'Forest Fibres', 'Potty Rolls'],
+        "Foods": ['Nomwich', 'Hot Dog', 'Golden Meat Pie'],
+        "Mining": ['Crude Oil', 'Copper Ore', 'Copper Bar', 'Iron Ore', 'Iron Bar', 'Gold Ore', 'Gold Bar', 'Platinum Ore', 'Platinum Bar'],
+        "Monster Drops": ['Spore Cap', 'Frog Leg', 'Bean Slices', 'Slime Sludge', 'Carrot Cube', 'Red Spore Cap', 'Goblin Ear', 'Plank', 'Bullfrog Horn', 'Stick', 'Corn Kernels'],
+        "Other": ['Crimson String', 'Cue Tape', 'Tattered Cloth'],
+        "Potions": ['Small Life Potion', 'Small Mana Potion', 'Average Strength Potion'],
+        "Unique Drops": ['Spore Tee', 'Dank Paypay Chest', 'Snakeskinventory Bag', 'Woodular Circle', 'Golden Plop']
+    },
+    "World 2": {
+        "Catching": ['Fly', 'Butterfly', 'Sentient Cereal', 'Fruitfly'],
+        "Chopping": ['Tropilogs'],
+        "Fishing": ['Goldfish', 'Hermit Can', 'Jellyfish', 'Bloach'],
+        "Foods": ['Kebab Sticks', 'Meat Pie'],
+        "Monster Drops": ['Pocket Sand', 'Megalodon Tooth', 'Crabby Cakey', 'Pincer Arm', 'Potato Remains'],
+        "Other": ['Golden Dubloon', 'Distilled Water'],
+        "Unique Drops": ['Glass Shard', 'Nuget Cake']
+    }
+}
+
+
+MATERIAL_WEIGHTS = [
+    ('Thread', 'Oak Logs', 'Nomwich', 'Hot Dog', 'Crude Oil', 'Copper Ore', 'Spore Cap', 'Frog Leg', 'Crimson String', 'Cue Tape'),
+    ('Trusty Nails', 'Bleach Logs', 'Copper Bar', 'Iron Ore', 'Bean Slices', 'Slime Sludge', 'Small Life Potion', 'Small Mana Potion', 'Grass Leaf'),
+    ('Boring Brick', 'Jungle Logs', 'Iron Bar', 'Carrot Cube', 'Goblin Ear', 'Red Spore Cap', 'Average Strength Potion', 'Spore Tee', 'Dank Paypay Chest', 'Fly', 'Kebab Sticks', 'Meat Pie'),
+    ('Chain Link', 'Forest Fibres', 'Gold Ore', 'Plank', 'Tattered Cloth', 'Snakeskinventory Bag', 'Butterfly', 'Goldfish', 'Pocket Sand', 'Golden Dubloon'),
+    ('Leather Hide', 'Golden Meat Pie', 'Bullfrog Horn', 'Gold Bar', 'Sentient Cereal', 'Tropilogs', 'Hermit Can', 'Megalodon Tooth'),
+    ('Amarok Slab', 'Stick', 'Corn Kernels', 'Jellyfish', 'Crabby Cakey'),
+    ('Platinum Ore', 'Fruitfly', 'Bloach', 'Potato Remains', 'Distilled Water', 'Potty Rolls'),
+    ('Platinum Bar', 'Pincer Arm', 'Glass Shard'),
+    ('Woodular Circle', 'Golden Plop', 'Nuget Cake'),
+    ('Chaotic Amarok Slab')
+]
