@@ -3,9 +3,9 @@
 This tool is used to determine various recipe combinations used to complete the Blunderhills Pack Mule Crafter task.
 
 ```
-Up to date with Version 1.06
+Up to date with Version 1.06b
 Task Tier Supported: 10
-Recommendations Tier Supported: 6
+Recommendations Tier Supported: 6 ( 7 Unverified )
 Last Updated: Jan 07, 2020 18:10:00 CST
 ```
 
@@ -14,6 +14,8 @@ Last Updated: Jan 07, 2020 18:10:00 CST
 AlienC4#5271 ( Optimization )
 
 Big Coight#4453, Deerjump#3003 ( Recipe data parsing)
+
+Hellsent#3689 ( Testing )
 
 ## Default Locked Recipes
 

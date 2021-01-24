@@ -34,7 +34,7 @@ for combo in combinations(iterable=CRAFTABLE, r=TO_CRAFT[TASK_TIER]):
         else:
             break
     # Gather recipe list, material list, and simulate carrying
-    allRecipes = sortRecipes(toCraft=combo, recipes=RECIPES)
+    allRecipes = sortRecipes(toCraft=combo, n=TO_CRAFT[TASK_TIER], recipes=RECIPES)
     materials = gatherMaterials(toCraft=allRecipes, recipes=RECIPES)
     carry = canCarry(materials=materials, inventory=INVENTORY)
     # Make copy of materials

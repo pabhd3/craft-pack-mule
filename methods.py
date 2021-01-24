@@ -17,14 +17,28 @@ def gatherNRecipes(toCraft, recipes):
     return nestedRecipes + allRecipes
 
 
-def sortRecipes(toCraft, recipes):
+def sortRecipes(toCraft, n, recipes):
     """
         Sort list of recipes based on quantity of resources needed to craft
-        Inputs: toCraft=list(str), recipes=dict
+        Inputs: toCraft=list(str), n=int, recipes=dict
         Returns: list(str)
     """
-    counted = []
+    # Setup list of main and nested recipes
+    mainRec, nestRec = [], []
     for tc in toCraft:
+        mainRec.append(tc)
+        nested = set(gatherNRecipes(toCraft=[tc], recipes=recipes))
+        # Check fi nested recipe was a "main" recipe
+        for nr in nested:
+            if(nr != tc):
+                if(nr in mainRec):
+                    # Add and remove main nested recipe
+                    mainRec.remove(nr)
+                    nestRec.append(nr)
+        if((len(mainRec) +len(nestRec)) >= n):
+            break
+    counted = []
+    for tc in mainRec:
         # Determine nested recipes + resources to craft them
         nested = gatherNRecipes(toCraft=[tc], recipes=recipes)
         needed = sum([sum([rsc[1] for rsc in recipes[nr][2]]) for nr in nested])
@@ -143,3 +157,9 @@ def canCraft(toCraft, materials, recipes, inv):
         return True
     except Exception as err:
         return False
+
+
+def recipeMaterials(r, recipes):
+    nested = gatherNRecipes(toCraft=r, recipes=recipes)
+    materials = gatherMaterials(toCraft=nested, recipes=recipes)
+    print(materials)
