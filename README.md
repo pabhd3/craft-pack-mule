@@ -3,17 +3,17 @@
 This tool is used to determine various recipe combinations used to complete the Blunderhills Pack Mule Crafter task.
 
 ```
-Up to date with Version 1.06b
+Up to date with Version 1.08
 Task Tier Supported: 10
-Recommendations Tier Supported: 6 ( 7 Unverified )
-Last Updated: Jan 07, 2020 18:10:00 CST
+Recommendations Tier Supported: 6 ( 7 unverified )
+Last Updated: Jan 29, 2020 23:29:00 CST
 ```
 
 ## Special Thanks
 
 AlienC4#5271 ( Optimization )
 
-Big Coight#4453, Deerjump#3003 ( Recipe data parsing)
+Big Coight#4453, Deerjump#3003 ( Recipe data parsing )
 
 Hellsent#3689 ( Testing )
 
@@ -22,7 +22,7 @@ Hellsent#3689 ( Testing )
 The following recipes are currently considered locked, either due to actually being uncraftable or my working on how to handle its recipe correctly.
 
 ```
-Party Hat, Anvil Tab 2, Golden Peanut, Blunderhills NPC Completion Token, Blunder Skills Completion Token, Blunderhills Misc Completion Token, Easy Blunderhills NPC Token, Med Blunderhills NPC Token, Hard Blunderhills NPC Token, Anvil Tab 3, Empty Box
+Party Hat, Blunderhills NPC Completion Token, Blunder Skills Completion Token, Blunderhills Misc Completion Token, Easy Blunderhills NPC Token, Med Blunderhills NPC Token, Hard Blunderhills NPC Token, Anvil Tab 3
 ```
 
 ## How to use
@@ -52,6 +52,15 @@ Ex. 45 491 150 75 375 451 75:
 If after 10,000 combinations of recipes a working combo isn't found, you'll be provided with a list of recommendations to complete this current tier.
 
 Please note that this feature is a *WORK IN PROGRESS*, and that it can be improved upon. Not every task tier is currently supported, but improvements are being made.
+
+### Calculations
+
+The following are taken into account when calculating Recommendations (Beta):
+
+* Inventory Slots: 16 - 68
+* Inventory Bags: 10, 50, 100, 250, 500
+* Inventory Multipliers: 1x - 3.5x
+* Stamp Multipliers: 1x - 1.25x
 
 ## Unlocking Recipes
 

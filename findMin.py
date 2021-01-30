@@ -2,7 +2,8 @@
 from copy import deepcopy
 from itertools import combinations, combinations_with_replacement
 from json import dump
-from math import comb, floor
+from math import floor
+from random import choice
 from time import sleep
 
 # Script Imports
@@ -13,28 +14,132 @@ from user import printCombo
 # Asset Imports
 from recipes import RECIPES
 
-
 # CONSTANTS
-BASE_CAPS = [ 10, 50, 100, 250, 500, 1000 ]
+ALL_SLOTS = range(16,69)
+ALL_TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
+
+BASE_CAPS = [10, 50, 100, 250, 500]
 CAP_TYPES = ["material", "mining", "fish", "food", "choppin", "bug"]
+CONFIDENCE = 20
+MAX_LOOPS = 100000
+MAX_RECIPE_COMBOS = 10000
 MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5]
-SLEEP_TIME = 0.01
-SLOTS = range(16,65)
-TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
+SLOTS = range(16,69)
+STAMPS = set([round(s1*s2, 4) for s1, s2 in combinations([(1 + (x * 0.01)) for x in range(0, 26)], 2)])
+TIERS = [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0]
+
+# Setup possible capacities
+POSSIBLE_CAPS = set()
+for base in BASE_CAPS:
+    for multi in MULTIPLIERS:
+        for stamp in STAMPS:
+            pCap = floor(base * multi * stamp)
+            POSSIBLE_CAPS.add(pCap)
 
 # Pull, Score, Sort Recipes
 CRAFTABLE = [k for k, v in RECIPES.items() if v[1]]
 SCORED_RECIPES = scoreRecipes(toCraft=CRAFTABLE)
 
+def canCarryAndCraft(materials, recipes, inventory):
+    """
+    Determine if a list of recipes can be carried and crafted
+    Inputs: materials=dict, recipes=list(str), inventory=dict
+    Returns: bool
+    """
+    if(canCarry(materials=deepcopy(materials), inventory=inventory)):
+        if(canCraft(toCraft=recipes, materials=deepcopy(materials),
+                    recipes=RECIPES, inv=inventory)):
+            return True
+    return False
+
+def findCraftable(n):
+    """
+    Determine if there are craftable combo of recipes
+    Inputs: n=int
+    Returns: (bool, list(str), dict)
+    """
+    # Setup max inventory
+    maxInventory = { 
+        "slots": max(SLOTS), "material": max(POSSIBLE_CAPS),
+        "mining": max(POSSIBLE_CAPS), "fish": max(POSSIBLE_CAPS),
+        "food": max(POSSIBLE_CAPS), "choppin": max(POSSIBLE_CAPS),
+        "bug": max(POSSIBLE_CAPS),
+        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+    }
+    # Setup trackers
+    COMBOS_CHECKED = 0
+    tierRecipes, materials = None, None
+    for combo in combinations(iterable=SCORED_RECIPES, r=t):
+        # Generate recipes + materials
+        tierRecipes = sortRecipes(toCraft=combo, n=t, recipes=RECIPES)
+        materials = gatherMaterials(toCraft=tierRecipes, recipes=RECIPES)
+        # Logging
+        COMBOS_CHECKED += 1
+        print(f"Checking Recipe Combos: {COMBOS_CHECKED}/{MAX_RECIPE_COMBOS}", end="\r")
+        # Check if can be carried + crafted
+        if(canCarryAndCraft(materials=materials, recipes=tierRecipes, inventory=maxInventory)):
+            return (True, tierRecipes, materials)
+        elif(COMBOS_CHECKED == MAX_RECIPE_COMBOS):
+            return (False, None, None)
+
+def updateCapRanges(capRanges, capNeeded):
+    """
+    Determine range of possible capacities to test in per carry type
+    Inputs: capRanges=dict
+    """
+    TOP_50_100 = floor(max(POSSIBLE_CAPS) * 0.5)
+    TOP_25_50 = floor(max(POSSIBLE_CAPS) * 0.25)
+    TOP_10_25 = floor(max(POSSIBLE_CAPS) * 0.1)
+    for capType in capRanges:
+        if(capType in capNeeded):
+            # Determine Cap Percent
+            CAP_PERCENT = None
+            if(capRanges[capType]["recent"] >= TOP_50_100):
+                CAP_PERCENT = 0.9
+            elif(capRanges[capType]["recent"] >= TOP_25_50):
+                CAP_PERCENT = 0.66
+            elif(capRanges[capType]["recent"] >= TOP_10_25):
+                CAP_PERCENT = 0.33
+            else:
+                CAP_PERCENT = 0.01
+            # Determine lower/upper, filter possible between and update
+            lowerEnd, upperEnd = floor(CAP_PERCENT * capRanges[capType]["recent"]), capRanges[capType]["recent"]
+            possible = [c for c in POSSIBLE_CAPS if (c >= lowerEnd and c <= upperEnd)]
+            capRanges[capType]["possible"] = possible
+            capRanges[capType]["lower"], capRanges[capType]["upper"] = min(possible), max(possible)
+        else:
+            capRanges[capType]["possible"] = [10]
+            capRanges[capType]["lower"], capRanges[capType]["upper"] = 10, 10
+
 RECOMMENDATIONS = []
 for ti, t in enumerate(TIERS):
-    if(ti == 0):
+    # Skip 0 items
+    if(t == 0):
         RECOMMENDATIONS.append(None)
         continue
-    print(f"Processing Tier {ti}: {t} Items\n")
-    # Pull recipes and materials
+    print(f"\n\nProcessing Tier {ti}: {t} Items")
+    # Set default recipes + materials
     tierRecipes = sortRecipes(toCraft=SCORED_RECIPES[:t], n=t, recipes=RECIPES)
     materials = gatherMaterials(toCraft=tierRecipes, recipes=RECIPES)
+    # Determine if there are craftable recipes
+    carryAndCraft, ccRecipes, ccMaterials = findCraftable(n=t)
+    if(carryAndCraft):
+        tierRecipes = deepcopy(ccRecipes)
+        materials = deepcopy(ccMaterials)
+    # Setup initial min inventory to max possible
+    minventory = { 
+        "slots": max(SLOTS), "material": max(POSSIBLE_CAPS),
+        "mining": max(POSSIBLE_CAPS), "fish": max(POSSIBLE_CAPS),
+        "food": max(POSSIBLE_CAPS), "choppin": max(POSSIBLE_CAPS),
+        "bug": max(POSSIBLE_CAPS),
+        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+    }
+    # Setup inventory
+    inventory = { 
+        "slots": 16, "material": 10, "mining": 10, "fish": 10,
+        "food": 10, "choppin": 10, "bug": 10,
+        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+    }
     # Process caps needed
     capsNeeded = {
         "material": False, "mining": False, "fish": False,
@@ -44,52 +149,82 @@ for ti, t in enumerate(TIERS):
         mType = info["type"]
         if(mType in CAP_TYPES):
             capsNeeded[mType] = True
-    nCaps = len([1 for _,v in capsNeeded.items() if v])
-    # Setup Inventory and Mintventory
-    inventory = { 
-        "slots": 16, "material": 10, "mining": 10, "fish": 10,
-        "food": 10, "choppin": 10, "bug": 10,
-        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
-    }
-    minventory = { 
-        "slots": 100000, "material": 100000, "mining": 100000, "fish": 100000,
-        "food": 100000, "choppin": 100000, "bug": 100000,
-        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
-    }
-    # Loop through various slots
+    capsNeededList = [k for k, v in capsNeeded.items() if v]
+    print(f"Caps Needed: {capsNeededList}")
+    # Start searching for minimum
     found = []
-    for s in SLOTS:
-        # Set number of slots
-        inventory["slots"] = s
-        # Check P2W Multipliers ( last )
-        for m in MULTIPLIERS:
-            # Check cap permutations
-            for p in combinations_with_replacement(BASE_CAPS, nCaps):
-                # Update Inventory
-                pi = 0
-                for cap in ("material", "mining", "fish", "food", "choppin", "bug"):
-                    if(capsNeeded[cap]):
-                        inventory[cap] = floor(p[pi] * m)
-                        pi += 1
-                # Status Message
-                message = f"{ m }x  "
-                message += f"Slots: { inventory['slots'] }  "
-                message += f"Mat: { inventory['material'] }  "
-                message += f"Min: { inventory['mining'] }  "
-                message += f"Fsh: { inventory['fish'] }  "
-                message += f"Fds: { inventory['food'] }  "
-                message += f"Chp: { inventory['choppin'] }  "
-                message += f"Bug: { inventory['bug'] }"
-                print(message, end="\r")
-                # Check if we can carry + craft
-                if(canCarry(materials=deepcopy(materials), inventory=inventory)):
-                    if(canCraft(toCraft=tierRecipes, materials=deepcopy(materials), recipes=RECIPES, inv=inventory)):
-                        temp = (inventory["slots"], inventory["material"], inventory["mining"],
-                                inventory["fish"], inventory["food"], inventory["choppin"],
-                                inventory["bug"])
-                        if(all([inventory[k] <= minventory[k] for k in inventory if k != "slots"])):
-                            minventory = deepcopy(inventory)
-        found.append(minventory)
+    if(carryAndCraft):
+        print(f"\nCurrently Craftable!")
+        # Loop through slots
+        found = []
+        for slot in SLOTS:
+            inventory["slots"] = slot
+            minventory["slots"] = slot
+            if(not canCarryAndCraft(materials=materials, recipes=tierRecipes, inventory=minventory)):
+                continue
+            # Update latest inventory
+            latest = (max(POSSIBLE_CAPS), max(POSSIBLE_CAPS), max(POSSIBLE_CAPS),
+                      max(POSSIBLE_CAPS), max(POSSIBLE_CAPS), max(POSSIBLE_CAPS))
+            if(len(found) > 0):
+                latest = (found[-1]["material"], found[-1]["mining"], found[-1]["fish"],
+                          found[-1]["food"], found[-1]["choppin"], found[-1]["bug"])
+            # Move on if we can't do better
+            if(all([l == 10 for l in latest])):
+                continue
+            # Setup possible capacities per type
+            capTypeRanges = {
+                "material": { "lower": None, "upper": None, "recent": latest[0], "possible": [] },
+                "mining": { "lower": None, "upper": None, "recent": latest[1], "possible": [] },
+                "fish": { "lower": None, "upper": None, "recent": latest[2], "possible": [] },
+                "food": { "lower": None, "upper": None, "recent": latest[3], "possible": [] },
+                "choppin": { "lower": None, "upper": None, "recent": latest[4], "possible": [] },
+                "bug": { "lower": None, "upper": None, "recent": latest[5], "possible": [] }
+            }
+            updateCapRanges(capRanges=capTypeRanges, capNeeded=capsNeededList)
+            # Start searching
+            LOOPS, CHANGES, UPDATES = 0, 0, 0
+            while(LOOPS < MAX_LOOPS):
+                # Setup random inventory
+                for c in CAP_TYPES:
+                    while(True):
+                        temp = choice(capTypeRanges[c]["possible"])
+                        if(temp <= capTypeRanges[c]["recent"]):
+                            inventory[c] = temp
+                            break
+                # Check if carry + craft
+                if(canCarryAndCraft(materials=materials, recipes=tierRecipes, inventory=inventory)):
+                    # Check if improvement
+                    if(all([inventory[k] <= minventory[k] for k in CAP_TYPES])):
+                        # Update Minventory & latest
+                        minventory = deepcopy(inventory)
+                        latest = (inventory["material"], inventory["mining"], inventory["fish"],
+                                  inventory["food"], inventory["choppin"], inventory["bug"])
+                        # Update Possible Ranges
+                        CHANGES += 1
+                        # print(f"CHANGES: {CHANGES}")
+                        for c in CAP_TYPES:
+                            capTypeRanges[c]["recent"] = inventory[c]
+                        if(CHANGES == CONFIDENCE):
+                            CHANGES = 0
+                            if(any([capTypeRanges[c]["upper"] > capTypeRanges[c]["recent"] for c in CAP_TYPES])):
+                                updateCapRanges(capRanges=capTypeRanges, capNeeded=capsNeededList)
+                                UPDATES += 1
+                # Status message
+                if(LOOPS % 1000 == 0):
+                    message = f"Slots: {slot} "\
+                              f" Mat: {capTypeRanges['material']['lower']}-{capTypeRanges['material']['upper']} "\
+                              f" Min: {capTypeRanges['mining']['lower']}-{capTypeRanges['mining']['upper']} "\
+                              f" Fsh: {capTypeRanges['fish']['lower']}-{capTypeRanges['fish']['upper']} "\
+                              f" Fod: {capTypeRanges['food']['lower']}-{capTypeRanges['food']['upper']} "\
+                              f" Chp: {capTypeRanges['choppin']['lower']}-{capTypeRanges['choppin']['upper']} "\
+                              f" Bug: {capTypeRanges['bug']['lower']}-{capTypeRanges['bug']['upper']} "\
+                              f"Loops: {LOOPS} Changes: {UPDATES}/{CHANGES}"
+                    print(message, end="\r")
+                LOOPS += 1
+            print(minventory)
+            found.append(minventory)
+    else:
+        print(f"\nNot Currently Craftable!")
     # Parse recipes
     compressed = []
     curRec, curCnt = None, 0
