@@ -3,10 +3,10 @@
 This tool is used to determine various recipe combinations used to complete the Blunderhills Pack Mule Crafter task.
 
 ```
-Up to date with Version 1.08
+Up to date with Version 1.10
 Task Tier Supported: 10
 Recommendations Tier Supported: 6 ( 7 unverified )
-Last Updated: Jan 29, 2020 23:29:00 CST
+Last Updated: Feb 22, 2020 19:02:00 CST
 ```
 
 ## Special Thanks
@@ -16,6 +16,8 @@ AlienC4#5271 ( Optimization )
 Big Coight#4453, Deerjump#3003 ( Recipe data parsing )
 
 Hellsent#3689 ( Testing )
+
+LiuLangZhe#9086 ( Feature Suggestor )
 
 ## Default Locked Recipes
 
@@ -29,8 +31,12 @@ Party Hat, Blunderhills NPC Completion Token, Blunder Skills Completion Token, B
 
 Make sure to check the appropriate config files listed below, to make sure everything is set up correctly.
 
+After hitting run, you will be prompted to choose an option listed below.
+
+### Option 1 - Solve Pack Mule Crafter
+
 `Setting Task Tier`
-After hitting run, you will be prompted to say which tier of the task you are currently on. See example below on how to input:
+You will be prompted to say which tier of the task you are currently on. See example below on how to input:
 
 ```
 What tier of the task are you on (1-10):
@@ -47,6 +53,22 @@ Ex. 45 491 150 75 375 451 75:
 39 491 150 75 375 431 75
 ```
 
+### Option 2 - Craft a Recipe
+
+You will be prompted to say and item, and an optional quanity to craft. See example below on how to input:
+
+```
+Sizable Choppin Pouch
+
+Icing Ironbite 25
+
+Buttered Toasted Butter
+
+Studded Hide 2
+```
+
+Currently, number of inventory slots and carry capacities are not taken into account when calculating material costs.
+
 ## Recommendations (Beta)
 
 If after 10,000 combinations of recipes a working combo isn't found, you'll be provided with a list of recommendations to complete this current tier.
@@ -60,7 +82,7 @@ The following are taken into account when calculating Recommendations (Beta):
 * Inventory Slots: 16 - 68
 * Inventory Bags: 10, 50, 100, 250, 500
 * Inventory Multipliers: 1x - 3.5x
-* Stamp Multipliers: 1x - 1.25x
+* Stamp Multipliers: 1x - 1.5x
 
 ## Unlocking Recipes
 

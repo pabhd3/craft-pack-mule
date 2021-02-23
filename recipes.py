@@ -12,7 +12,8 @@ RECIPES = {
     'Wooden Bow': ('weapon', True, [('Spore Cap', 25, 'material', False), ('Thread', 30, 'material', False)]),
     'Gnarled Wand': ('weapon', True, [('Spore Cap', 25, 'material', False), ('Oak Logs', 30, 'choppin', False)]),
     'Farmer Brim': ('armor', True, [('Spore Cap', 10, 'material', False), ('Copper Ore', 20, 'mining', False)]),
-    'Orange Tee': ('armor', True, [('Spore Cap', 20, 'material', False), ('Oak Logs', 25, 'choppin', False)]), 'Torn Jeans': ('armor', True, [('Frog Leg', 30, 'material', False), ('Copper Bar', 10, 'mining', False), ('Thread', 20, 'material', False)]),
+    'Orange Tee': ('armor', True, [('Spore Cap', 20, 'material', False), ('Oak Logs', 25, 'choppin', False)]),
+    'Torn Jeans': ('armor', True, [('Frog Leg', 30, 'material', False), ('Copper Bar', 10, 'mining', False), ('Thread', 20, 'material', False)]),
     'Flip Flops': ('armor', True, [('Bean Slices', 50, 'material', False), ('Copper Bar', 40, 'mining', False), ('Grass Leaf', 50, 'choppin', False)]),
     'Copper Pickaxe': ('tool', True, [('Copper Bar', 20, 'mining', False), ('Frog Leg', 50, 'material', False)]),
     'Cramped Mining Pouch': ('bag', True, [('Copper Ore', 150, 'mining', False)]),
@@ -141,25 +142,25 @@ RECIPES = {
 
 
 MATERIALS = {
-    "World 1": {
-        "Anvil": ['Thread', 'Trusty Nails', 'Boring Brick', 'Chain Link', 'Leather Hide'],
-        "Boss": ['Amarok Slab', 'Chaotic Amarok Slab'],
-        "Chopping": ['Oak Logs', 'Grass Leaf', 'Bleach Logs', 'Jungle Logs', 'Forest Fibres', 'Potty Rolls'],
-        "Foods": ['Nomwich', 'Hot Dog', 'Golden Meat Pie'],
-        "Mining": ['Crude Oil', 'Copper Ore', 'Copper Bar', 'Iron Ore', 'Iron Bar', 'Gold Ore', 'Gold Bar', 'Platinum Ore', 'Platinum Bar'],
-        "Monster Drops": ['Spore Cap', 'Frog Leg', 'Bean Slices', 'Slime Sludge', 'Carrot Cube', 'Red Spore Cap', 'Goblin Ear', 'Plank', 'Bullfrog Horn', 'Stick', 'Corn Kernels'],
-        "Other": ['Crimson String', 'Cue Tape', 'Tattered Cloth', 'Silver Antique'],
-        "Potions": ['Small Life Potion', 'Small Mana Potion', 'Average Strength Potion'],
-        "Unique Drops": ['Spore Tee', 'Dank Paypay Chest', 'Snakeskinventory Bag', 'Woodular Circle', 'Golden Plop']
+    'World 1': {
+        'Anvil': ['Thread', 'Trusty Nails', 'Boring Brick', 'Chain Link', 'Leather Hide'],
+        'Boss': ['Amarok Slab', 'Chaotic Amarok Slab'],
+        'Chopping': ['Oak Logs', 'Grass Leaf', 'Bleach Logs', 'Jungle Logs', 'Forest Fibres', 'Potty Rolls'],
+        'Foods': ['Nomwich', 'Hot Dog', 'Golden Meat Pie'],
+        'Mining': ['Crude Oil', 'Copper Ore', 'Copper Bar', 'Iron Ore', 'Iron Bar', 'Gold Ore', 'Gold Bar', 'Platinum Ore', 'Platinum Bar'],
+        'Monster Drops': ['Spore Cap', 'Frog Leg', 'Bean Slices', 'Slime Sludge', 'Carrot Cube', 'Red Spore Cap', 'Goblin Ear', 'Plank', 'Bullfrog Horn', 'Stick', 'Corn Kernels'],
+        'Other': ['Crimson String', 'Cue Tape', 'Tattered Cloth', 'Silver Antique'],
+        'Potions': ['Small Life Potion', 'Small Mana Potion', 'Average Strength Potion'],
+        'Unique Drops': ['Spore Tee', 'Dank Paypay Chest', 'Snakeskinventory Bag', 'Woodular Circle', 'Golden Plop']
     },
-    "World 2": {
-        "Catching": ['Fly', 'Butterfly', 'Sentient Cereal', 'Fruitfly'],
-        "Chopping": ['Tropilogs'],
-        "Fishing": ['Goldfish', 'Hermit Can', 'Jellyfish', 'Bloach'],
-        "Foods": ['Kebab Sticks', 'Meat Pie'],
-        "Monster Drops": ['Pocket Sand', 'Megalodon Tooth', 'Crabby Cakey', 'Pincer Arm', 'Potato Remains'],
-        "Other": ['Golden Dubloon', 'Distilled Water'],
-        "Unique Drops": ['Glass Shard', 'Nuget Cake', 'Ghost']
+    'World 2': {
+        'Catching': ['Fly', 'Butterfly', 'Sentient Cereal', 'Fruitfly'],
+        'Chopping': ['Tropilogs'],
+        'Fishing': ['Goldfish', 'Hermit Can', 'Jellyfish', 'Bloach'],
+        'Foods': ['Kebab Sticks', 'Meat Pie'],
+        'Monster Drops': ['Pocket Sand', 'Megalodon Tooth', 'Crabby Cakey', 'Pincer Arm', 'Potato Remains'],
+        'Other': ['Golden Dubloon', 'Distilled Water'],
+        'Unique Drops': ['Glass Shard', 'Nuget Cake', 'Ghost']
     }
 }
 

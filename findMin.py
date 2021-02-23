@@ -21,12 +21,13 @@ ALL_TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 BASE_CAPS = [10, 50, 100, 250, 500]
 CAP_TYPES = ["material", "mining", "fish", "food", "choppin", "bug"]
 CONFIDENCE = 20
+FLATFILE = "recommended.tst.json"
 MAX_LOOPS = 100000
 MAX_RECIPE_COMBOS = 10000
 MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5]
 SLOTS = range(16,69)
-STAMPS = set([round(s1*s2, 4) for s1, s2 in combinations([(1 + (x * 0.01)) for x in range(0, 26)], 2)])
-TIERS = [0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0]
+STAMPS = set([round(s1*s2, 4) for s1, s2 in combinations([(1 + (x * 0.01)) for x in range(0, 51)], 2)])
+TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 
 # Setup possible capacities
 POSSIBLE_CAPS = set()
@@ -265,5 +266,5 @@ for ti, t in enumerate(TIERS):
     RECOMMENDATIONS.append(recommend)
 
 # Write to flatfile
-with open("recommended.json", "w") as f:
+with open(FLATFILE, "w") as f:
     dump(RECOMMENDATIONS, f, indent=2)

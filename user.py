@@ -94,6 +94,7 @@ def printRecommended(tier):
     print(f"Materials\n{ ', '.join(recommendedTier['materials']) }\n")
     print(f"Inventory Setups:")
     if(recommendedTier["caps"]):
+        print(f"Remember to combine 'not full' stacks of materials when possible!")
         for i in recommendedTier["caps"]:
             setup = f"* { i['slots'] } Slots, "\
                     f"{ i['material'] } Materials, "\
