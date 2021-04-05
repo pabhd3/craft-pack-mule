@@ -97,7 +97,10 @@ while(True):
             nestedMaterials = gatherMaterials(toCraft=nestedRecipes, recipes=RECIPES)
             user.printCombo(recipes=nestedRecipes, materials=nestedMaterials)
         except KeyError:
-            print(f"Recipe not found")
+            print(f"\nRecipe not found\nDid you mean any of these recipes?")
+            s = uRcp[:3]
+            suggest = [k for k in RECIPES.keys() if s.lower() in k.lower()]
+            print("\n  ".join(suggest))
     elif(menuChoice == "3"):
         break
     else:

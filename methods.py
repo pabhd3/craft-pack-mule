@@ -59,7 +59,7 @@ def gatherMaterials(toCraft, recipes):
     # Check for materials
     materials = {}
     for recipe in toCraft:
-        rType, rCraftable, rResources = recipes[recipe]
+        rType, rCraftable, rResources, _ = recipes[recipe]
         for rscName, rscQuantity, rscType, RscRecipe in rResources:
             # Add material quantity
             if(not RscRecipe):
