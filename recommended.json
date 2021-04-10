@@ -48,36 +48,63 @@
     ],
     "caps": [
       {
-        "slots": 17,
-        "material": 45,
-        "mining": 18,
-        "fish": 10,
-        "food": 10,
-        "choppin": 15,
-        "bug": 10
-      },
-      {
-        "slots": 19,
-        "material": 30,
-        "mining": 18,
-        "fish": 10,
-        "food": 10,
-        "choppin": 15,
-        "bug": 10
-      },
-      {
-        "slots": 20,
+        "slots": 16,
         "material": 29,
         "mining": 18,
         "fish": 10,
         "food": 10,
-        "choppin": 15,
+        "choppin": 30,
+        "bug": 10
+      },
+      {
+        "slots": 17,
+        "material": 29,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 30,
+        "bug": 10
+      },
+      {
+        "slots": 18,
+        "material": 23,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 30,
+        "bug": 10
+      },
+      {
+        "slots": 19,
+        "material": 23,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 23,
+        "bug": 10
+      },
+      {
+        "slots": 20,
+        "material": 23,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 18,
         "bug": 10
       },
       {
         "slots": 21,
         "material": 23,
-        "mining": 18,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 15,
+        "bug": 10
+      },
+      {
+        "slots": 22,
+        "material": 23,
+        "mining": 10,
         "fish": 10,
         "food": 10,
         "choppin": 15,
@@ -85,20 +112,83 @@
       },
       {
         "slots": 23,
-        "material": 20,
-        "mining": 18,
+        "material": 23,
+        "mining": 10,
         "fish": 10,
         "food": 10,
-        "choppin": 15,
+        "choppin": 13,
         "bug": 10
       },
       {
         "slots": 24,
-        "material": 19,
-        "mining": 18,
+        "material": 23,
+        "mining": 10,
         "fish": 10,
         "food": 10,
-        "choppin": 15,
+        "choppin": 12,
+        "bug": 10
+      },
+      {
+        "slots": 25,
+        "material": 23,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 27,
+        "material": 20,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 28,
+        "material": 18,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 29,
+        "material": 15,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 32,
+        "material": 13,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 33,
+        "material": 12,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
+        "bug": 10
+      },
+      {
+        "slots": 36,
+        "material": 10,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 10,
         "bug": 10
       }
     ]
@@ -133,8 +223,17 @@
     ],
     "caps": [
       {
+        "slots": 16,
+        "material": 105,
+        "mining": 68,
+        "fish": 10,
+        "food": 10,
+        "choppin": 82,
+        "bug": 10
+      },
+      {
         "slots": 17,
-        "material": 134,
+        "material": 75,
         "mining": 68,
         "fish": 10,
         "food": 10,
@@ -143,26 +242,26 @@
       },
       {
         "slots": 18,
-        "material": 105,
-        "mining": 68,
+        "material": 75,
+        "mining": 64,
         "fish": 10,
         "food": 10,
-        "choppin": 69,
+        "choppin": 77,
         "bug": 10
       },
       {
         "slots": 19,
-        "material": 75,
-        "mining": 68,
+        "material": 73,
+        "mining": 64,
         "fish": 10,
         "food": 10,
-        "choppin": 59,
+        "choppin": 77,
         "bug": 10
       },
       {
         "slots": 20,
         "material": 73,
-        "mining": 68,
+        "mining": 64,
         "fish": 10,
         "food": 10,
         "choppin": 59,
@@ -171,277 +270,304 @@
       {
         "slots": 21,
         "material": 73,
-        "mining": 68,
+        "mining": 45,
+        "fish": 10,
+        "food": 10,
+        "choppin": 59,
+        "bug": 10
+      },
+      {
+        "slots": 22,
+        "material": 63,
+        "mining": 45,
+        "fish": 10,
+        "food": 10,
+        "choppin": 59,
+        "bug": 10
+      },
+      {
+        "slots": 23,
+        "material": 50,
+        "mining": 45,
+        "fish": 10,
+        "food": 10,
+        "choppin": 59,
+        "bug": 10
+      },
+      {
+        "slots": 24,
+        "material": 50,
+        "mining": 45,
         "fish": 10,
         "food": 10,
         "choppin": 52,
         "bug": 10
       },
       {
-        "slots": 22,
-        "material": 73,
-        "mining": 68,
+        "slots": 25,
+        "material": 42,
+        "mining": 45,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 26,
+        "material": 42,
+        "mining": 34,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 27,
+        "material": 38,
+        "mining": 34,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 28,
+        "material": 37,
+        "mining": 34,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 29,
+        "material": 32,
+        "mining": 34,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 30,
+        "material": 25,
+        "mining": 34,
+        "fish": 10,
+        "food": 10,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 31,
+        "material": 25,
+        "mining": 34,
         "fish": 10,
         "food": 10,
         "choppin": 46,
         "bug": 10
       },
       {
-        "slots": 23,
-        "material": 63,
-        "mining": 68,
+        "slots": 32,
+        "material": 25,
+        "mining": 32,
         "fish": 10,
         "food": 10,
         "choppin": 46,
         "bug": 10
       },
       {
-        "slots": 24,
-        "material": 63,
-        "mining": 68,
+        "slots": 33,
+        "material": 25,
+        "mining": 32,
         "fish": 10,
         "food": 10,
         "choppin": 41,
         "bug": 10
       },
       {
-        "slots": 25,
-        "material": 63,
-        "mining": 68,
+        "slots": 34,
+        "material": 25,
+        "mining": 32,
         "fish": 10,
         "food": 10,
         "choppin": 38,
         "bug": 10
       },
       {
-        "slots": 26,
-        "material": 63,
-        "mining": 64,
-        "fish": 10,
-        "food": 10,
-        "choppin": 38,
-        "bug": 10
-      },
-      {
-        "slots": 27,
-        "material": 63,
-        "mining": 64,
+        "slots": 35,
+        "material": 25,
+        "mining": 32,
         "fish": 10,
         "food": 10,
         "choppin": 35,
         "bug": 10
       },
       {
-        "slots": 28,
-        "material": 50,
-        "mining": 64,
+        "slots": 36,
+        "material": 25,
+        "mining": 27,
         "fish": 10,
         "food": 10,
         "choppin": 35,
         "bug": 10
       },
       {
-        "slots": 29,
-        "material": 50,
-        "mining": 45,
-        "fish": 10,
-        "food": 10,
-        "choppin": 35,
-        "bug": 10
-      },
-      {
-        "slots": 30,
-        "material": 42,
-        "mining": 45,
-        "fish": 10,
-        "food": 10,
-        "choppin": 35,
-        "bug": 10
-      },
-      {
-        "slots": 31,
-        "material": 42,
-        "mining": 45,
+        "slots": 37,
+        "material": 25,
+        "mining": 27,
         "fish": 10,
         "food": 10,
         "choppin": 32,
         "bug": 10
       },
       {
-        "slots": 32,
-        "material": 42,
-        "mining": 34,
-        "fish": 10,
-        "food": 10,
-        "choppin": 32,
-        "bug": 10
-      },
-      {
-        "slots": 33,
-        "material": 42,
-        "mining": 34,
+        "slots": 38,
+        "material": 25,
+        "mining": 27,
         "fish": 10,
         "food": 10,
         "choppin": 30,
         "bug": 10
       },
       {
-        "slots": 34,
-        "material": 42,
-        "mining": 34,
-        "fish": 10,
-        "food": 10,
-        "choppin": 28,
-        "bug": 10
-      },
-      {
-        "slots": 35,
-        "material": 38,
-        "mining": 34,
-        "fish": 10,
-        "food": 10,
-        "choppin": 28,
-        "bug": 10
-      },
-      {
-        "slots": 36,
-        "material": 38,
-        "mining": 32,
-        "fish": 10,
-        "food": 10,
-        "choppin": 28,
-        "bug": 10
-      },
-      {
-        "slots": 37,
-        "material": 37,
-        "mining": 32,
-        "fish": 10,
-        "food": 10,
-        "choppin": 28,
-        "bug": 10
-      },
-      {
-        "slots": 38,
-        "material": 32,
-        "mining": 32,
-        "fish": 10,
-        "food": 10,
-        "choppin": 28,
-        "bug": 10
-      },
-      {
         "slots": 39,
         "material": 25,
-        "mining": 32,
+        "mining": 23,
         "fish": 10,
         "food": 10,
-        "choppin": 28,
+        "choppin": 30,
         "bug": 10
       },
       {
         "slots": 40,
         "material": 25,
-        "mining": 32,
+        "mining": 22,
         "fish": 10,
         "food": 10,
-        "choppin": 26,
+        "choppin": 30,
         "bug": 10
       },
       {
         "slots": 41,
         "material": 25,
-        "mining": 27,
+        "mining": 20,
+        "fish": 10,
+        "food": 10,
+        "choppin": 30,
+        "bug": 10
+      },
+      {
+        "slots": 42,
+        "material": 25,
+        "mining": 17,
+        "fish": 10,
+        "food": 10,
+        "choppin": 30,
+        "bug": 10
+      },
+      {
+        "slots": 43,
+        "material": 25,
+        "mining": 17,
+        "fish": 10,
+        "food": 10,
+        "choppin": 28,
+        "bug": 10
+      },
+      {
+        "slots": 44,
+        "material": 25,
+        "mining": 17,
         "fish": 10,
         "food": 10,
         "choppin": 26,
         "bug": 10
       },
       {
-        "slots": 42,
-        "material": 25,
-        "mining": 27,
-        "fish": 10,
-        "food": 10,
-        "choppin": 25,
-        "bug": 10
-      },
-      {
-        "slots": 43,
-        "material": 25,
-        "mining": 23,
-        "fish": 10,
-        "food": 10,
-        "choppin": 25,
-        "bug": 10
-      },
-      {
-        "slots": 44,
-        "material": 25,
-        "mining": 22,
-        "fish": 10,
-        "food": 10,
-        "choppin": 25,
-        "bug": 10
-      },
-      {
         "slots": 45,
         "material": 25,
-        "mining": 22,
+        "mining": 16,
+        "fish": 10,
+        "food": 10,
+        "choppin": 26,
+        "bug": 10
+      },
+      {
+        "slots": 46,
+        "material": 25,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 26,
+        "bug": 10
+      },
+      {
+        "slots": 47,
+        "material": 25,
+        "mining": 15,
+        "fish": 10,
+        "food": 10,
+        "choppin": 25,
+        "bug": 10
+      },
+      {
+        "slots": 48,
+        "material": 25,
+        "mining": 15,
         "fish": 10,
         "food": 10,
         "choppin": 23,
         "bug": 10
       },
       {
-        "slots": 46,
+        "slots": 49,
         "material": 25,
-        "mining": 22,
+        "mining": 15,
         "fish": 10,
         "food": 10,
         "choppin": 22,
         "bug": 10
       },
       {
-        "slots": 47,
+        "slots": 50,
         "material": 25,
-        "mining": 22,
+        "mining": 14,
+        "fish": 10,
+        "food": 10,
+        "choppin": 22,
+        "bug": 10
+      },
+      {
+        "slots": 51,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 22,
+        "bug": 10
+      },
+      {
+        "slots": 52,
+        "material": 25,
+        "mining": 13,
         "fish": 10,
         "food": 10,
         "choppin": 21,
         "bug": 10
       },
       {
-        "slots": 48,
+        "slots": 53,
         "material": 25,
-        "mining": 22,
+        "mining": 13,
         "fish": 10,
         "food": 10,
         "choppin": 20,
         "bug": 10
       },
       {
-        "slots": 49,
+        "slots": 54,
         "material": 25,
-        "mining": 22,
-        "fish": 10,
-        "food": 10,
-        "choppin": 19,
-        "bug": 10
-      },
-      {
-        "slots": 50,
-        "material": 25,
-        "mining": 20,
-        "fish": 10,
-        "food": 10,
-        "choppin": 19,
-        "bug": 10
-      },
-      {
-        "slots": 51,
-        "material": 25,
-        "mining": 19,
+        "mining": 13,
         "fish": 10,
         "food": 10,
         "choppin": 19,
@@ -449,20 +575,92 @@
       },
       {
         "slots": 55,
-        "material": 21,
-        "mining": 19,
+        "material": 25,
+        "mining": 13,
         "fish": 10,
         "food": 10,
-        "choppin": 19,
+        "choppin": 18,
         "bug": 10
       },
       {
         "slots": 56,
-        "material": 19,
-        "mining": 19,
+        "material": 25,
+        "mining": 13,
         "fish": 10,
         "food": 10,
-        "choppin": 19,
+        "choppin": 18,
+        "bug": 10
+      },
+      {
+        "slots": 57,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 17,
+        "bug": 10
+      },
+      {
+        "slots": 58,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 16,
+        "bug": 10
+      },
+      {
+        "slots": 60,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 15,
+        "bug": 10
+      },
+      {
+        "slots": 62,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 14,
+        "bug": 10
+      },
+      {
+        "slots": 64,
+        "material": 25,
+        "mining": 13,
+        "fish": 10,
+        "food": 10,
+        "choppin": 13,
+        "bug": 10
+      },
+      {
+        "slots": 66,
+        "material": 25,
+        "mining": 12,
+        "fish": 10,
+        "food": 10,
+        "choppin": 13,
+        "bug": 10
+      },
+      {
+        "slots": 67,
+        "material": 25,
+        "mining": 11,
+        "fish": 10,
+        "food": 10,
+        "choppin": 13,
+        "bug": 10
+      },
+      {
+        "slots": 69,
+        "material": 25,
+        "mining": 10,
+        "fish": 10,
+        "food": 10,
+        "choppin": 13,
         "bug": 10
       }
     ]
@@ -517,381 +715,381 @@
     ],
     "caps": [
       {
-        "slots": 30,
-        "material": 304,
-        "mining": 396,
+        "slots": 29,
+        "material": 140,
+        "mining": 197,
         "fish": 10,
-        "food": 21,
-        "choppin": 265,
+        "food": 109,
+        "choppin": 157,
+        "bug": 10
+      },
+      {
+        "slots": 30,
+        "material": 140,
+        "mining": 197,
+        "fish": 10,
+        "food": 75,
+        "choppin": 118,
         "bug": 10
       },
       {
         "slots": 31,
-        "material": 280,
-        "mining": 197,
+        "material": 140,
+        "mining": 139,
         "fish": 10,
-        "food": 19,
-        "choppin": 235,
+        "food": 75,
+        "choppin": 118,
         "bug": 10
       },
       {
         "slots": 32,
-        "material": 223,
-        "mining": 197,
+        "material": 135,
+        "mining": 139,
         "fish": 10,
-        "food": 19,
-        "choppin": 235,
+        "food": 75,
+        "choppin": 118,
         "bug": 10
       },
       {
         "slots": 33,
-        "material": 223,
+        "material": 125,
         "mining": 136,
         "fish": 10,
-        "food": 19,
-        "choppin": 235,
+        "food": 75,
+        "choppin": 103,
         "bug": 10
       },
       {
         "slots": 34,
-        "material": 223,
-        "mining": 136,
+        "material": 125,
+        "mining": 132,
         "fish": 10,
-        "food": 19,
-        "choppin": 157,
+        "food": 75,
+        "choppin": 103,
         "bug": 10
       },
       {
         "slots": 35,
-        "material": 155,
-        "mining": 136,
+        "material": 125,
+        "mining": 116,
         "fish": 10,
-        "food": 19,
-        "choppin": 157,
+        "food": 75,
+        "choppin": 97,
         "bug": 10
       },
       {
         "slots": 36,
-        "material": 140,
-        "mining": 136,
+        "material": 115,
+        "mining": 100,
         "fish": 10,
-        "food": 19,
-        "choppin": 129,
-        "bug": 10
-      },
-      {
-        "slots": 37,
-        "material": 140,
-        "mining": 136,
-        "fish": 10,
-        "food": 19,
-        "choppin": 103,
-        "bug": 10
-      },
-      {
-        "slots": 38,
-        "material": 140,
-        "mining": 132,
-        "fish": 10,
-        "food": 19,
-        "choppin": 103,
-        "bug": 10
-      },
-      {
-        "slots": 39,
-        "material": 140,
-        "mining": 116,
-        "fish": 10,
-        "food": 19,
+        "food": 75,
         "choppin": 94,
         "bug": 10
       },
       {
-        "slots": 40,
-        "material": 140,
+        "slots": 37,
+        "material": 115,
         "mining": 100,
         "fish": 10,
-        "food": 19,
+        "food": 38,
+        "choppin": 94,
+        "bug": 10
+      },
+      {
+        "slots": 38,
+        "material": 115,
+        "mining": 87,
+        "fish": 10,
+        "food": 38,
+        "choppin": 94,
+        "bug": 10
+      },
+      {
+        "slots": 39,
+        "material": 115,
+        "mining": 79,
+        "fish": 10,
+        "food": 38,
+        "choppin": 86,
+        "bug": 10
+      },
+      {
+        "slots": 40,
+        "material": 112,
+        "mining": 79,
+        "fish": 10,
+        "food": 38,
         "choppin": 86,
         "bug": 10
       },
       {
         "slots": 41,
-        "material": 125,
-        "mining": 100,
+        "material": 112,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
+        "food": 38,
         "choppin": 86,
         "bug": 10
       },
       {
         "slots": 42,
-        "material": 115,
-        "mining": 100,
+        "material": 112,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
-        "choppin": 79,
+        "food": 38,
+        "choppin": 74,
         "bug": 10
       },
       {
         "slots": 43,
-        "material": 115,
-        "mining": 99,
+        "material": 112,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
-        "choppin": 74,
+        "food": 38,
+        "choppin": 65,
         "bug": 10
       },
       {
         "slots": 44,
-        "material": 112,
-        "mining": 99,
+        "material": 105,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
-        "choppin": 74,
+        "food": 38,
+        "choppin": 65,
         "bug": 10
       },
       {
         "slots": 45,
-        "material": 112,
-        "mining": 87,
+        "material": 94,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
-        "choppin": 68,
+        "food": 38,
+        "choppin": 65,
         "bug": 10
       },
       {
         "slots": 46,
-        "material": 105,
-        "mining": 87,
+        "material": 94,
+        "mining": 70,
         "fish": 10,
-        "food": 19,
-        "choppin": 68,
+        "food": 38,
+        "choppin": 58,
         "bug": 10
       },
       {
         "slots": 47,
         "material": 94,
-        "mining": 87,
+        "mining": 68,
         "fish": 10,
-        "food": 19,
-        "choppin": 68,
+        "food": 38,
+        "choppin": 58,
         "bug": 10
       },
       {
         "slots": 48,
         "material": 78,
-        "mining": 87,
+        "mining": 68,
         "fish": 10,
-        "food": 19,
-        "choppin": 68,
+        "food": 38,
+        "choppin": 58,
         "bug": 10
       },
       {
         "slots": 49,
         "material": 78,
-        "mining": 79,
+        "mining": 64,
         "fish": 10,
-        "food": 19,
-        "choppin": 65,
+        "food": 38,
+        "choppin": 58,
         "bug": 10
       },
       {
         "slots": 50,
         "material": 78,
-        "mining": 78,
+        "mining": 58,
         "fish": 10,
-        "food": 19,
-        "choppin": 59,
+        "food": 38,
+        "choppin": 58,
         "bug": 10
       },
       {
         "slots": 51,
         "material": 78,
-        "mining": 70,
+        "mining": 54,
         "fish": 10,
-        "food": 19,
+        "food": 38,
         "choppin": 58,
         "bug": 10
       },
       {
         "slots": 52,
-        "material": 78,
-        "mining": 68,
+        "material": 75,
+        "mining": 54,
         "fish": 10,
-        "food": 19,
+        "food": 38,
         "choppin": 58,
         "bug": 10
       },
       {
         "slots": 53,
-        "material": 78,
-        "mining": 64,
+        "material": 70,
+        "mining": 54,
         "fish": 10,
-        "food": 19,
+        "food": 38,
         "choppin": 58,
         "bug": 10
       },
       {
         "slots": 54,
-        "material": 75,
-        "mining": 64,
+        "material": 70,
+        "mining": 54,
         "fish": 10,
-        "food": 19,
-        "choppin": 58,
+        "food": 38,
+        "choppin": 52,
         "bug": 10
       },
       {
         "slots": 55,
-        "material": 75,
-        "mining": 64,
+        "material": 70,
+        "mining": 54,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 56,
+        "material": 70,
+        "mining": 50,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 57,
+        "material": 58,
+        "mining": 50,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 58,
+        "material": 56,
+        "mining": 50,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 59,
+        "material": 56,
+        "mining": 47,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 60,
+        "material": 56,
+        "mining": 46,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 61,
+        "material": 56,
+        "mining": 44,
+        "fish": 10,
+        "food": 27,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 62,
+        "material": 56,
+        "mining": 44,
+        "fish": 10,
+        "food": 25,
+        "choppin": 52,
+        "bug": 10
+      },
+      {
+        "slots": 63,
+        "material": 56,
+        "mining": 44,
         "fish": 10,
         "food": 19,
         "choppin": 52,
         "bug": 10
       },
       {
-        "slots": 56,
-        "material": 75,
-        "mining": 64,
-        "fish": 10,
-        "food": 19,
-        "choppin": 47,
-        "bug": 10
-      },
-      {
-        "slots": 57,
-        "material": 70,
-        "mining": 64,
-        "fish": 10,
-        "food": 19,
-        "choppin": 47,
-        "bug": 10
-      },
-      {
-        "slots": 58,
-        "material": 70,
-        "mining": 64,
-        "fish": 10,
-        "food": 19,
-        "choppin": 43,
-        "bug": 10
-      },
-      {
-        "slots": 59,
-        "material": 70,
-        "mining": 64,
-        "fish": 10,
-        "food": 19,
-        "choppin": 40,
-        "bug": 10
-      },
-      {
-        "slots": 60,
-        "material": 58,
-        "mining": 64,
-        "fish": 10,
-        "food": 19,
-        "choppin": 40,
-        "bug": 10
-      },
-      {
-        "slots": 61,
-        "material": 58,
-        "mining": 58,
-        "fish": 10,
-        "food": 19,
-        "choppin": 40,
-        "bug": 10
-      },
-      {
-        "slots": 62,
-        "material": 58,
-        "mining": 58,
-        "fish": 10,
-        "food": 19,
-        "choppin": 37,
-        "bug": 10
-      },
-      {
-        "slots": 63,
-        "material": 58,
-        "mining": 58,
-        "fish": 10,
-        "food": 19,
-        "choppin": 35,
-        "bug": 10
-      },
-      {
         "slots": 64,
-        "material": 58,
-        "mining": 54,
+        "material": 56,
+        "mining": 41,
         "fish": 10,
         "food": 19,
-        "choppin": 35,
+        "choppin": 52,
         "bug": 10
       },
       {
         "slots": 65,
         "material": 56,
-        "mining": 54,
+        "mining": 41,
         "fish": 10,
-        "food": 19,
-        "choppin": 35,
+        "food": 15,
+        "choppin": 52,
         "bug": 10
       },
       {
         "slots": 66,
         "material": 56,
-        "mining": 50,
+        "mining": 41,
         "fish": 10,
-        "food": 19,
-        "choppin": 35,
+        "food": 15,
+        "choppin": 47,
         "bug": 10
       },
       {
         "slots": 67,
         "material": 56,
-        "mining": 50,
+        "mining": 41,
         "fish": 10,
-        "food": 19,
-        "choppin": 33,
+        "food": 15,
+        "choppin": 43,
         "bug": 10
       },
       {
         "slots": 68,
         "material": 56,
-        "mining": 47,
+        "mining": 39,
         "fish": 10,
-        "food": 19,
-        "choppin": 33,
+        "food": 15,
+        "choppin": 43,
         "bug": 10
       },
       {
         "slots": 69,
         "material": 56,
-        "mining": 47,
+        "mining": 37,
         "fish": 10,
-        "food": 19,
-        "choppin": 31,
+        "food": 15,
+        "choppin": 43,
         "bug": 10
       },
       {
         "slots": 70,
         "material": 56,
-        "mining": 46,
+        "mining": 35,
         "fish": 10,
-        "food": 19,
-        "choppin": 31,
-        "bug": 10
-      },
-      {
-        "slots": 70,
-        "material": 56,
-        "mining": 46,
-        "fish": 10,
-        "food": 19,
-        "choppin": 29,
+        "food": 15,
+        "choppin": 43,
         "bug": 10
       }
     ]
@@ -960,243 +1158,252 @@
     ],
     "caps": [
       {
-        "slots": 39,
-        "material": 284,
+        "slots": 38,
+        "material": 450,
         "mining": 442,
         "fish": 10,
-        "food": 345,
-        "choppin": 572,
+        "food": 424,
+        "choppin": 485,
+        "bug": 10
+      },
+      {
+        "slots": 39,
+        "material": 357,
+        "mining": 442,
+        "fish": 10,
+        "food": 341,
+        "choppin": 485,
         "bug": 10
       },
       {
         "slots": 40,
         "material": 280,
-        "mining": 295,
+        "mining": 442,
         "fish": 10,
-        "food": 254,
-        "choppin": 551,
-        "bug": 10
-      },
-      {
-        "slots": 41,
-        "material": 280,
-        "mining": 221,
-        "fish": 10,
-        "food": 198,
-        "choppin": 551,
-        "bug": 10
-      },
-      {
-        "slots": 42,
-        "material": 280,
-        "mining": 221,
-        "fish": 10,
-        "food": 178,
-        "choppin": 485,
-        "bug": 10
-      },
-      {
-        "slots": 43,
-        "material": 280,
-        "mining": 221,
-        "fish": 10,
-        "food": 136,
-        "choppin": 281,
-        "bug": 10
-      },
-      {
-        "slots": 44,
-        "material": 280,
-        "mining": 183,
-        "fish": 10,
-        "food": 117,
+        "food": 217,
         "choppin": 276,
         "bug": 10
       },
       {
-        "slots": 45,
-        "material": 280,
-        "mining": 181,
+        "slots": 41,
+        "material": 247,
+        "mining": 442,
         "fish": 10,
-        "food": 105,
+        "food": 193,
+        "choppin": 276,
+        "bug": 10
+      },
+      {
+        "slots": 42,
+        "material": 225,
+        "mining": 442,
+        "fish": 10,
+        "food": 174,
+        "choppin": 276,
+        "bug": 10
+      },
+      {
+        "slots": 43,
+        "material": 225,
+        "mining": 442,
+        "fish": 10,
+        "food": 158,
         "choppin": 243,
         "bug": 10
       },
       {
-        "slots": 46,
-        "material": 280,
-        "mining": 181,
+        "slots": 44,
+        "material": 225,
+        "mining": 442,
         "fish": 10,
-        "food": 91,
-        "choppin": 201,
+        "food": 129,
+        "choppin": 184,
+        "bug": 10
+      },
+      {
+        "slots": 45,
+        "material": 165,
+        "mining": 442,
+        "fish": 10,
+        "food": 105,
+        "choppin": 184,
+        "bug": 10
+      },
+      {
+        "slots": 46,
+        "material": 165,
+        "mining": 302,
+        "fish": 10,
+        "food": 85,
+        "choppin": 184,
         "bug": 10
       },
       {
         "slots": 47,
-        "material": 247,
-        "mining": 181,
+        "material": 165,
+        "mining": 295,
         "fish": 10,
-        "food": 81,
-        "choppin": 201,
+        "food": 77,
+        "choppin": 176,
         "bug": 10
       },
       {
         "slots": 48,
-        "material": 225,
-        "mining": 181,
+        "material": 165,
+        "mining": 229,
         "fish": 10,
         "food": 75,
-        "choppin": 192,
+        "choppin": 162,
         "bug": 10
       },
       {
         "slots": 49,
-        "material": 225,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 192,
-        "bug": 10
-      },
-      {
-        "slots": 50,
-        "material": 195,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 192,
-        "bug": 10
-      },
-      {
-        "slots": 51,
-        "material": 153,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 192,
-        "bug": 10
-      },
-      {
-        "slots": 52,
-        "material": 153,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 176,
-        "bug": 10
-      },
-      {
-        "slots": 53,
-        "material": 150,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 176,
-        "bug": 10
-      },
-      {
-        "slots": 54,
-        "material": 150,
-        "mining": 153,
+        "material": 165,
+        "mining": 227,
         "fish": 10,
         "food": 75,
         "choppin": 156,
         "bug": 10
       },
       {
-        "slots": 55,
-        "material": 150,
-        "mining": 153,
+        "slots": 50,
+        "material": 153,
+        "mining": 221,
+        "fish": 10,
+        "food": 75,
+        "choppin": 156,
+        "bug": 10
+      },
+      {
+        "slots": 51,
+        "material": 153,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 144,
         "bug": 10
       },
       {
-        "slots": 56,
-        "material": 150,
-        "mining": 153,
+        "slots": 52,
+        "material": 153,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 141,
         "bug": 10
       },
       {
-        "slots": 57,
+        "slots": 53,
         "material": 150,
-        "mining": 153,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 141,
+        "bug": 10
+      },
+      {
+        "slots": 54,
+        "material": 150,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 128,
         "bug": 10
       },
       {
-        "slots": 58,
+        "slots": 55,
         "material": 150,
-        "mining": 153,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 117,
         "bug": 10
       },
       {
-        "slots": 59,
-        "material": 146,
-        "mining": 153,
-        "fish": 10,
-        "food": 75,
-        "choppin": 117,
-        "bug": 10
-      },
-      {
-        "slots": 60,
-        "material": 146,
-        "mining": 151,
-        "fish": 10,
-        "food": 75,
-        "choppin": 117,
-        "bug": 10
-      },
-      {
-        "slots": 61,
-        "material": 146,
-        "mining": 151,
+        "slots": 56,
+        "material": 150,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 115,
         "bug": 10
       },
       {
-        "slots": 62,
+        "slots": 57,
         "material": 146,
-        "mining": 151,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 115,
+        "bug": 10
+      },
+      {
+        "slots": 58,
+        "material": 140,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 115,
+        "bug": 10
+      },
+      {
+        "slots": 59,
+        "material": 140,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 108,
+        "bug": 10
+      },
+      {
+        "slots": 60,
+        "material": 135,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 108,
+        "bug": 10
+      },
+      {
+        "slots": 61,
+        "material": 135,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 101,
+        "bug": 10
+      },
+      {
+        "slots": 62,
+        "material": 125,
+        "mining": 183,
+        "fish": 10,
+        "food": 75,
+        "choppin": 101,
         "bug": 10
       },
       {
         "slots": 63,
-        "material": 146,
-        "mining": 136,
+        "material": 117,
+        "mining": 183,
         "fish": 10,
         "food": 75,
-        "choppin": 108,
+        "choppin": 101,
         "bug": 10
       },
       {
         "slots": 64,
-        "material": 146,
-        "mining": 131,
+        "material": 115,
+        "mining": 183,
         "fish": 10,
         "food": 75,
-        "choppin": 108,
+        "choppin": 101,
         "bug": 10
       },
       {
         "slots": 65,
-        "material": 146,
-        "mining": 131,
+        "material": 113,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 101,
@@ -1204,26 +1411,26 @@
       },
       {
         "slots": 66,
-        "material": 146,
-        "mining": 131,
+        "material": 102,
+        "mining": 183,
         "fish": 10,
         "food": 75,
-        "choppin": 96,
+        "choppin": 101,
         "bug": 10
       },
       {
         "slots": 67,
-        "material": 140,
-        "mining": 131,
+        "material": 98,
+        "mining": 183,
         "fish": 10,
         "food": 75,
-        "choppin": 96,
+        "choppin": 101,
         "bug": 10
       },
       {
         "slots": 68,
-        "material": 135,
-        "mining": 131,
+        "material": 98,
+        "mining": 183,
         "fish": 10,
         "food": 75,
         "choppin": 96,
@@ -1231,29 +1438,20 @@
       },
       {
         "slots": 69,
-        "material": 135,
-        "mining": 131,
+        "material": 98,
+        "mining": 181,
         "fish": 10,
         "food": 75,
-        "choppin": 94,
+        "choppin": 96,
         "bug": 10
       },
       {
         "slots": 70,
-        "material": 135,
-        "mining": 131,
-        "fish": 10,
-        "food": 75,
-        "choppin": 88,
-        "bug": 10
-      },
-      {
-        "slots": 70,
-        "material": 135,
-        "mining": 131,
+        "material": 98,
+        "mining": 181,
         "fish": 10,
         "food": 38,
-        "choppin": 88,
+        "choppin": 96,
         "bug": 10
       }
     ]
@@ -1340,201 +1538,201 @@
     ],
     "caps": [
       {
+        "slots": 49,
+        "material": 510,
+        "mining": 450,
+        "fish": 383,
+        "food": 366,
+        "choppin": 377,
+        "bug": 368
+      },
+      {
         "slots": 50,
-        "material": 884,
-        "mining": 606,
-        "fish": 2224,
-        "food": 80,
-        "choppin": 229,
-        "bug": 1801
+        "material": 510,
+        "mining": 397,
+        "fish": 336,
+        "food": 307,
+        "choppin": 376,
+        "bug": 311
       },
       {
         "slots": 51,
-        "material": 748,
-        "mining": 450,
-        "fish": 726,
-        "food": 76,
-        "choppin": 229,
-        "bug": 729
+        "material": 510,
+        "mining": 323,
+        "fish": 282,
+        "food": 261,
+        "choppin": 376,
+        "bug": 265
       },
       {
         "slots": 52,
-        "material": 748,
-        "mining": 397,
-        "fish": 588,
-        "food": 75,
-        "choppin": 229,
-        "bug": 590
+        "material": 510,
+        "mining": 305,
+        "fish": 261,
+        "food": 243,
+        "choppin": 343,
+        "bug": 247
       },
       {
         "slots": 53,
-        "material": 625,
-        "mining": 397,
-        "fish": 499,
-        "food": 75,
-        "choppin": 229,
-        "bug": 501
+        "material": 450,
+        "mining": 305,
+        "fish": 243,
+        "food": 227,
+        "choppin": 343,
+        "bug": 231
       },
       {
         "slots": 54,
-        "material": 514,
-        "mining": 397,
-        "fish": 414,
-        "food": 75,
-        "choppin": 229,
-        "bug": 391
+        "material": 450,
+        "mining": 305,
+        "fish": 201,
+        "food": 190,
+        "choppin": 276,
+        "bug": 193
       },
       {
         "slots": 55,
-        "material": 510,
-        "mining": 397,
-        "fish": 338,
-        "food": 75,
-        "choppin": 204,
-        "bug": 322
+        "material": 398,
+        "mining": 305,
+        "fish": 190,
+        "food": 180,
+        "choppin": 276,
+        "bug": 190
       },
       {
         "slots": 56,
-        "material": 450,
-        "mining": 397,
-        "fish": 283,
-        "food": 75,
-        "choppin": 189,
-        "bug": 273
+        "material": 374,
+        "mining": 305,
+        "fish": 180,
+        "food": 171,
+        "choppin": 256,
+        "bug": 190
       },
       {
         "slots": 57,
-        "material": 374,
-        "mining": 397,
-        "fish": 244,
-        "food": 75,
-        "choppin": 188,
-        "bug": 237
+        "material": 313,
+        "mining": 305,
+        "fish": 180,
+        "food": 158,
+        "choppin": 230,
+        "bug": 190
       },
       {
         "slots": 58,
-        "material": 374,
+        "material": 287,
         "mining": 305,
-        "fish": 204,
-        "food": 75,
-        "choppin": 188,
-        "bug": 197
+        "fish": 180,
+        "food": 151,
+        "choppin": 229,
+        "bug": 190
       },
       {
         "slots": 59,
-        "material": 313,
+        "material": 280,
         "mining": 305,
-        "fish": 190,
-        "food": 75,
-        "choppin": 188,
-        "bug": 190
+        "fish": 180,
+        "food": 148,
+        "choppin": 229,
+        "bug": 184
       },
       {
         "slots": 60,
-        "material": 288,
+        "material": 280,
         "mining": 305,
         "fish": 180,
-        "food": 75,
-        "choppin": 188,
-        "bug": 190
+        "food": 142,
+        "choppin": 215,
+        "bug": 175
       },
       {
         "slots": 61,
         "material": 280,
         "mining": 305,
-        "fish": 171,
-        "food": 75,
+        "fish": 156,
+        "food": 126,
         "choppin": 188,
-        "bug": 190
+        "bug": 152
       },
       {
         "slots": 62,
-        "material": 280,
+        "material": 255,
         "mining": 305,
-        "fish": 165,
-        "food": 74,
+        "fish": 137,
+        "food": 117,
         "choppin": 188,
-        "bug": 190
+        "bug": 136
       },
       {
         "slots": 63,
         "material": 255,
         "mining": 305,
-        "fish": 151,
-        "food": 71,
-        "choppin": 188,
-        "bug": 190
+        "fish": 127,
+        "food": 111,
+        "choppin": 184,
+        "bug": 127
       },
       {
         "slots": 64,
         "material": 255,
-        "mining": 305,
-        "fish": 144,
-        "food": 69,
-        "choppin": 188,
-        "bug": 180
+        "mining": 300,
+        "fish": 118,
+        "food": 104,
+        "choppin": 184,
+        "bug": 118
       },
       {
         "slots": 65,
         "material": 255,
-        "mining": 305,
-        "fish": 132,
-        "food": 65,
-        "choppin": 184,
-        "bug": 164
+        "mining": 300,
+        "fish": 110,
+        "food": 98,
+        "choppin": 179,
+        "bug": 110
       },
       {
         "slots": 66,
         "material": 255,
         "mining": 300,
-        "fish": 128,
-        "food": 63,
-        "choppin": 184,
-        "bug": 157
+        "fish": 97,
+        "food": 86,
+        "choppin": 155,
+        "bug": 97
       },
       {
         "slots": 67,
         "material": 255,
         "mining": 300,
-        "fish": 120,
-        "food": 59,
-        "choppin": 179,
-        "bug": 144
+        "fish": 90,
+        "food": 80,
+        "choppin": 141,
+        "bug": 95
       },
       {
         "slots": 68,
         "material": 255,
-        "mining": 300,
-        "fish": 104,
-        "food": 54,
-        "choppin": 155,
-        "bug": 124
+        "mining": 298,
+        "fish": 90,
+        "food": 79,
+        "choppin": 141,
+        "bug": 95
       },
       {
         "slots": 69,
         "material": 255,
-        "mining": 300,
-        "fish": 93,
-        "food": 50,
-        "choppin": 141,
-        "bug": 108
+        "mining": 289,
+        "fish": 90,
+        "food": 77,
+        "choppin": 138,
+        "bug": 95
       },
       {
         "slots": 70,
         "material": 255,
-        "mining": 300,
+        "mining": 286,
         "fish": 90,
-        "food": 47,
-        "choppin": 130,
-        "bug": 97
-      },
-      {
-        "slots": 70,
-        "material": 255,
-        "mining": 300,
-        "fish": 90,
-        "food": 46,
-        "choppin": 128,
+        "food": 75,
+        "choppin": 133,
         "bug": 95
       }
     ]
@@ -1642,111 +1840,111 @@
     ],
     "caps": [
       {
+        "slots": 59,
+        "material": 542,
+        "mining": 610,
+        "fish": 542,
+        "food": 542,
+        "choppin": 651,
+        "bug": 542
+      },
+      {
         "slots": 60,
-        "material": 528,
-        "mining": 611,
-        "fish": 187,
-        "food": 1233,
-        "choppin": 687,
-        "bug": 433
+        "material": 510,
+        "mining": 610,
+        "fish": 410,
+        "food": 410,
+        "choppin": 466,
+        "bug": 410
       },
       {
         "slots": 61,
         "material": 510,
-        "mining": 513,
-        "fish": 180,
-        "food": 838,
-        "choppin": 651,
-        "bug": 386
+        "mining": 463,
+        "fish": 332,
+        "food": 332,
+        "choppin": 392,
+        "bug": 332
       },
       {
         "slots": 62,
         "material": 510,
-        "mining": 463,
-        "fish": 180,
-        "food": 662,
-        "choppin": 540,
-        "bug": 347
+        "mining": 452,
+        "fish": 303,
+        "food": 303,
+        "choppin": 376,
+        "bug": 303
       },
       {
         "slots": 63,
         "material": 510,
         "mining": 407,
-        "fish": 180,
-        "food": 477,
-        "choppin": 419,
-        "bug": 290
+        "fish": 280,
+        "food": 279,
+        "choppin": 366,
+        "bug": 279
       },
       {
         "slots": 64,
         "material": 510,
-        "mining": 387,
-        "fish": 180,
-        "food": 423,
-        "choppin": 377,
-        "bug": 269
+        "mining": 407,
+        "fish": 249,
+        "food": 257,
+        "choppin": 328,
+        "bug": 244
       },
       {
         "slots": 65,
-        "material": 510,
-        "mining": 385,
-        "fish": 180,
-        "food": 412,
-        "choppin": 371,
-        "bug": 252
+        "material": 504,
+        "mining": 407,
+        "fish": 235,
+        "food": 243,
+        "choppin": 326,
+        "bug": 229
       },
       {
         "slots": 66,
-        "material": 510,
-        "mining": 355,
-        "fish": 180,
-        "food": 368,
-        "choppin": 366,
-        "bug": 236
+        "material": 500,
+        "mining": 407,
+        "fish": 220,
+        "food": 227,
+        "choppin": 305,
+        "bug": 215
       },
       {
         "slots": 67,
-        "material": 510,
-        "mining": 339,
-        "fish": 180,
-        "food": 334,
-        "choppin": 333,
-        "bug": 221
-      },
-      {
-        "slots": 68,
-        "material": 510,
-        "mining": 339,
-        "fish": 169,
-        "food": 288,
-        "choppin": 305,
+        "material": 500,
+        "mining": 387,
+        "fish": 207,
+        "food": 213,
+        "choppin": 294,
         "bug": 203
       },
       {
+        "slots": 68,
+        "material": 436,
+        "mining": 387,
+        "fish": 196,
+        "food": 201,
+        "choppin": 294,
+        "bug": 200
+      },
+      {
         "slots": 69,
-        "material": 510,
-        "mining": 309,
-        "fish": 162,
-        "food": 267,
-        "choppin": 305,
+        "material": 419,
+        "mining": 387,
+        "fish": 186,
+        "food": 190,
+        "choppin": 275,
         "bug": 200
       },
       {
         "slots": 70,
-        "material": 510,
-        "mining": 309,
-        "fish": 157,
-        "food": 255,
-        "choppin": 295,
-        "bug": 200
-      },
-      {
-        "slots": 70,
-        "material": 510,
-        "mining": 309,
-        "fish": 150,
-        "food": 238,
-        "choppin": 276,
+        "material": 403,
+        "mining": 387,
+        "fish": 180,
+        "food": 183,
+        "choppin": 274,
         "bug": 200
       }
     ]
