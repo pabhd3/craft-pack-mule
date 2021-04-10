@@ -64,6 +64,8 @@ def findCombo():
 
 # Reminder to look at README
 print(f"A README is available in the 'code > README.md' section of this Repl\n")
+print(f"Recipe Data: Up to Date with v1.14 ( 04/09/21, 12:54 CST )")
+print(f"Recommendation Data: Up to Date with v1.14 ( 04/09/21 16:32 CST )")
 
 # Loop through options
 option2Prompt = f"\nEnter the recipe ( quantity optional ) as it appears "\
