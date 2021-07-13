@@ -18,7 +18,7 @@ def findCombo():
     TASK_TIER = user.getTaskTier()
 
     # Gather Carry Capacities
-    INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000 }
+    INVENTORY = { "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "token": 1, "inf": 100000 }
     user.getCaps(inventory=INVENTORY)
 
     # Loop Through Combinations
@@ -64,8 +64,9 @@ def findCombo():
 
 # Reminder to look at README
 print(f"A README is available in the 'code > README.md' section of this Repl\n")
-print(f"Recipe Data: Up to Date with v1.14 ( 04/09/21, 12:54 CST )")
-print(f"Recommendation Data: Up to Date with v1.14 ( 04/09/21 16:32 CST )")
+print(f"Recipe Data: Up to Date with v1.22d ( 07/13/21, 18:10 CST )")
+print(f"Recommendation Data: Up to Date with v1.22d ( 07/13/21 18:10 CST )")
+print(f"Consider using the UI Version of this Calculator: https://idleoncompanion.com/")
 
 # Loop through options
 option2Prompt = f"\nEnter the recipe ( quantity optional ) as it appears "\

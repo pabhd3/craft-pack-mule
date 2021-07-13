@@ -15,20 +15,21 @@ from user import printCombo
 from recipes import RECIPES
 
 # Reference
-ALL_ANVIL_TABS = [1, 2]
-ALL_SLOTS = range(16,71)
+ALL_ANVIL_TABS = [1, 2, 3]
+ALL_SLOTS = range(16,76)
 ALL_TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 
 # Constants
-ANVIL_TABS = [1, 2]
-BASE_CAPS = [10, 50, 100, 250, 500]
-CAP_TYPES = ["material", "mining", "fish", "food", "choppin", "bug"]
+ANVIL_TABS = [1, 2, 3]
+BASE_CAPS = [10, 50, 100, 250, 500, 1000, 2000]
+CAP_TYPES = ["material", "mining", "fish", "food",
+             "choppin", "bug", "critter", "soul"]
 CONFIDENCE = 20
 FLATFILE = "temp.json"
-MAX_LOOPS = 100000
+MAX_LOOPS = 25000
 MAX_RECIPE_COMBOS = 1000
 MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5]
-SLOTS = range(16,71)
+SLOTS = range(16,76)
 STAMPS = set([round(s1*s2, 4) for s1, s2 in combinations([(1 + (x * 0.01)) for x in range(0, 51)], 2)])
 TIERS = [0, 3, 8, 14, 24, 34, 45, 55, 70, 90, 110]
 
@@ -63,8 +64,10 @@ def findCraftable(n, scoredRecipes):
         "slots": max(ALL_SLOTS), "material": max(POSSIBLE_CAPS),
         "mining": max(POSSIBLE_CAPS), "fish": max(POSSIBLE_CAPS),
         "food": max(POSSIBLE_CAPS), "choppin": max(POSSIBLE_CAPS),
-        "bug": max(POSSIBLE_CAPS),
-        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+        "bug": max(POSSIBLE_CAPS), "critter": max(POSSIBLE_CAPS),
+        "soul": max(POSSIBLE_CAPS),
+        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, 
+        "token": 1, "inf": 100000
     }
     # Setup trackers
     COMBOS_CHECKED = 0
@@ -120,15 +123,18 @@ def findStartingCap(slots, toCraft, materials):
         inv = { 
             "slots": slots, "material": cap, "mining": cap,
             "fish": cap, "food": cap, "choppin": cap, "bug": cap,
-            "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+            "critter": cap, "soul": cap,
+            "weapon": 1, "armor": 1, "tool": 1, "bag": 1,
+            "token": 1, "inf": 100000
         }
         if(canCraft(toCraft=toCraft, materials=deepcopy(materials),
                     recipes=RECIPES, inv=inv)):
             continue
         else:
-            return (cap+1, cap+1, cap+1, cap+1, cap+1, cap+1)
+            return (cap+1, cap+1, cap+1, cap+1,
+                    cap+1, cap+1, cap+1, cap+1)
     else:
-        return (10, 10, 10, 10, 10, 10)
+        return (10, 10, 10, 10, 10, 10, 10, 10)
 
 RECOMMENDATIONS = {}
 # Iterate Anvil Tabs + Task Tiers
@@ -166,19 +172,24 @@ for anvilTab in ANVIL_TABS:
                         "slots": max(ALL_SLOTS), "material": max(POSSIBLE_CAPS),
                         "mining": max(POSSIBLE_CAPS), "fish": max(POSSIBLE_CAPS),
                         "food": max(POSSIBLE_CAPS), "choppin": max(POSSIBLE_CAPS),
-                        "bug": max(POSSIBLE_CAPS),
-                        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+                        "bug": max(POSSIBLE_CAPS), "critter": max(POSSIBLE_CAPS),
+                        "soul": max(POSSIBLE_CAPS),
+                        "weapon": 1, "armor": 1, "tool": 1, "bag": 1,
+                        "token": 1, "inf": 100000
                     }
                     # Setup inventory
                     inventory = { 
                         "slots": 16, "material": 10, "mining": 10, "fish": 10,
-                        "food": 10, "choppin": 10, "bug": 10,
-                        "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+                        "food": 10, "choppin": 10, "bug": 10, "critter": 10,
+                        "soul": 10,
+                        "weapon": 1, "armor": 1, "tool": 1, "bag": 1,
+                        "token": 1, "inf": 100000
                     }
                     # Process caps needed
                     capsNeeded = {
                         "material": False, "mining": False, "fish": False,
-                        "food": False, "choppin": False, "bug": False
+                        "food": False, "choppin": False, "bug": False,
+                        "critter": False, "soul": False
                     }
                     for m, info in materials.items():
                         mType = info["type"]
@@ -196,7 +207,8 @@ for anvilTab in ANVIL_TABS:
                         # Update latest inventory
                         try:
                             latest = (found[-1]["material"], found[-1]["mining"], found[-1]["fish"],
-                                      found[-1]["food"], found[-1]["choppin"], found[-1]["bug"])
+                                      found[-1]["food"], found[-1]["choppin"], found[-1]["bug"],
+                                      found[-1]["critter"], found[-1]["soul"])
                         except:
                             latest = findStartingCap(slots=slot, toCraft=tierRecipes, materials=materials)
                         # Move on if we can't do better
@@ -210,7 +222,9 @@ for anvilTab in ANVIL_TABS:
                             "fish": { "lower": None, "upper": None, "recent": latest[2], "possible": [] },
                             "food": { "lower": None, "upper": None, "recent": latest[3], "possible": [] },
                             "choppin": { "lower": None, "upper": None, "recent": latest[4], "possible": [] },
-                            "bug": { "lower": None, "upper": None, "recent": latest[5], "possible": [] }
+                            "bug": { "lower": None, "upper": None, "recent": latest[5], "possible": [] },
+                            "critter": { "lower": None, "upper": None, "recent": latest[6], "possible": [] },
+                            "soul": { "lower": None, "upper": None, "recent": latest[7], "possible": [] }
                         }
                         updateCapRanges(capRanges=capTypeRanges, capNeeded=capsNeededList)
                         # print(capTypeRanges)
@@ -231,7 +245,8 @@ for anvilTab in ANVIL_TABS:
                                     # Update Minventory & latest
                                     minventory = deepcopy(inventory)
                                     latest = (inventory["material"], inventory["mining"], inventory["fish"],
-                                            inventory["food"], inventory["choppin"], inventory["bug"])
+                                            inventory["food"], inventory["choppin"], inventory["bug"],
+                                            inventory["critter"], inventory["soul"])
                                     # Update Possible Ranges
                                     CHANGES += 1
                                     # print(f"CHANGES: {CHANGES}")
@@ -251,6 +266,8 @@ for anvilTab in ANVIL_TABS:
                                         f" Fod: {capTypeRanges['food']['lower']}-{capTypeRanges['food']['upper']} "\
                                         f" Chp: {capTypeRanges['choppin']['lower']}-{capTypeRanges['choppin']['upper']} "\
                                         f" Bug: {capTypeRanges['bug']['lower']}-{capTypeRanges['bug']['upper']} "\
+                                        f" Critter: {capTypeRanges['critter']['lower']}-{capTypeRanges['critter']['upper']} "\
+                                        f" Soul: {capTypeRanges['soul']['lower']}-{capTypeRanges['soul']['upper']} "\
                                         f"Loops: {LOOPS} Changes: {UPDATES}/{CHANGES}"
                                 print(message, end="\r")
                             LOOPS += 1
@@ -283,8 +300,10 @@ for anvilTab in ANVIL_TABS:
             # Check if inventory should be added
             current = { 
                 "slots": 16, "material": 10000, "mining": 10000, "fish": 10000,
-                "food": 10000, "choppin": 10000, "bug": 10000,
-                "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "inf": 100000
+                "food": 10000, "choppin": 10000, "bug": 10000, "critter": 10000,
+                "soul": 10000,
+                "weapon": 1, "armor": 1, "tool": 1, "bag": 1, "token": 1,
+                "inf": 100000
             }
             for i in found:
                 if(i["slots"] == 100000):
@@ -295,7 +314,8 @@ for anvilTab in ANVIL_TABS:
                         "slots": i["slots"], "material": i["material"],
                         "mining": i["mining"], "fish": i["fish"],
                         "food": i["food"], "choppin": i["choppin"],
-                        "bug": i["bug"]
+                        "bug": i["bug"], "critter": i["critter"],
+                        "soul": i["soul"]
                     })
                     current = deepcopy(i)
             RECOMMENDATIONS[f"anvil{anvilTab}tier{ti}"] = recommend

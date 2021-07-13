@@ -10,10 +10,11 @@ from recipes import MATERIAL_WEIGHTS, RECIPES
 
 def scoreRecipes(toCraft):
     # Constants
-    BASE_CAPS = [10, 50, 100, 250, 500, 1000]
+    BASE_CAPS = [10, 50, 100, 250, 500, 1000, 2000]
     MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5]
     TYPES = [ "material", "mining", "fish", "food", "choppin", 
-            "bug", "weapon", "armor", "tool", "bag", "inf" ]
+              "bug", "critter", "soul", "weapon", "armor", "tool",
+              "bag", "inf" ]
     # Setup list of scored recipes
     SCORED = []
     # Setup Caps

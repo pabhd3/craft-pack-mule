@@ -91,22 +91,22 @@ def canCraft(toCraft, materials, recipes, inv):
     """
     # Setup Inventory
     inventory = [ None ] * inv["slots"]
-    for material, info in materials.items():
-        while True:
-            # Find first empty slot
-            idx = inventory.index(None)
-            matType = info["type"]
-            matQuantity = info["quantity"]
-            slot = {
-                "material": material,
-                "quantity": inv[matType] if matQuantity > inv[matType] else matQuantity
-            }
-            inventory[idx] = slot
-            # Update material quantity remaining
-            info["quantity"] -= slot["quantity"]
-            if(info["quantity"] == 0):
-                break
     try:
+        for material, info in materials.items():
+            while True:
+                # Find first empty slot
+                idx = inventory.index(None)
+                matType = info["type"]
+                matQuantity = info["quantity"]
+                slot = {
+                    "material": material,
+                    "quantity": inv[matType] if matQuantity > inv[matType] else matQuantity
+                }
+                inventory[idx] = slot
+                # Update material quantity remaining
+                info["quantity"] -= slot["quantity"]
+                if(info["quantity"] == 0):
+                    break
         for recipe in toCraft:
             # Add crafted item
             rIndex = inventory.index(None)

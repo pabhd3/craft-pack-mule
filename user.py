@@ -28,13 +28,13 @@ def getCaps(inventory):
     """
     while True:
         try:
-            prompt = "Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs)\n"\
-                     "Ex. 45 491 150 75 375 451 75:\n"
+            prompt = "Capacities (Slots, Materials, Mining, Fishing, Foods, Chopping, Bugs, Critter, Soul)\n"\
+                     "Ex. 45 491 150 75 375 451 75 210 150:\n"
             caps = input(prompt)
             # Parse input
             (inventory["slots"], inventory["material"], inventory["mining"],
              inventory["fish"], inventory["food"], inventory["choppin"],
-             inventory["bug"]) = [int(i) for i in caps.split(" ")]
+             inventory["bug"], inventory["critter"], inventory["soul"]) = [int(i) for i in caps.split(" ")]
             break
         except:
             print("Please enter a valid capacity input")
@@ -102,7 +102,9 @@ def printRecommended(tier):
                     f"{ i['fish'] } Fish, "\
                     f"{ i['food'] } Food, "\
                     f"{ i['choppin'] } Chopping, "\
-                    f"{ i['bug'] } Bug"
+                    f"{ i['bug'] } Bug, "\
+                    f"{ i['critter'] } Critter "\
+                    f"{ i['soul'] } Soul"
             print(setup)
     else:
         print("No current inventory setups exist for this list of recipes.")
